@@ -8,8 +8,13 @@ interface Props {
 
 const { currentSlug } = Astro.props;
 
+const HOME_ID = "home";
+
 const docs = await getCollection("docs");
-const ids = docs.map((d) => d.id).sort();
+const ids = docs
+	.map((d) => d.id)
+	.filter((id) => id !== HOME_ID)
+	.sort();
 
 interface TreeNode {
 	label: string;
@@ -50,6 +55,17 @@ const tree = buildTree(ids);
 
 <nav class="h-full overflow-y-auto p-4">
 	<a href="/" class="block text-lg font-bold mb-4 text-[var(--color-heading)]">IA Notes</a>
+	<a
+		href="/"
+		class:list={[
+			"block text-sm py-1 px-2 rounded mb-2 transition-colors font-medium",
+			currentSlug === HOME_ID
+				? "bg-[var(--color-heading)]/20 text-[var(--color-heading)]"
+				: "text-[var(--color-text)] hover:bg-[var(--color-surface)]",
+		]}
+	>
+		Home
+	</a>
 	<ul class="space-y-1">
 		{tree.map((node) => (
 			<SidebarNode node={node} currentSlug={currentSlug} depth={0} />

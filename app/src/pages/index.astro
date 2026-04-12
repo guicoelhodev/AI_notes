@@ -3,12 +3,12 @@ import Layout from "../layout/Layout.astro";
 import { getCollection, render } from "astro:content";
 
 const docs = await getCollection("docs");
-const firstDoc = docs.sort((a, b) => a.id.localeCompare(b.id))[0];
-const { Content } = firstDoc ? await render(firstDoc) : { Content: () => null };
+const homeDoc = docs.find((d) => d.id === "home");
+const { Content } = homeDoc ? await render(homeDoc) : { Content: () => null };
 ---
 
-<Layout title="IA Notes" currentSlug={firstDoc?.id}>
-	{firstDoc ? (
+<Layout title="IA Notes" currentSlug="home">
+	{homeDoc ? (
 		<article class="prose max-w-none">
 			<Content />
 		</article>
