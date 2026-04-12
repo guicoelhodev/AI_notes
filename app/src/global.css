@@ -39,3 +39,15 @@ body {
 	--tw-prose-bullets: var(--color-muted);
 	--tw-prose-hr: var(--color-muted);
 }
+
+.prose table {
+	display: block;
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+.prose pre,
+.prose code {
+	overflow-x: auto;
+	max-width: 100%;
+}
