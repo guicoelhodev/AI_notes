@@ -1,1 +1,37 @@
 @import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+:root {
+	--color-base: #0f1117;
+	--color-surface: #1a1b26;
+	--color-text: #c0caf5;
+	--color-heading: #7aa2f7;
+	--color-link: #bb9af7;
+	--color-muted: #565f89;
+}
+
+.light {
+	--color-base: #f8f9fc;
+	--color-surface: #e8eaf0;
+	--color-text: #1e2030;
+	--color-heading: #3b5998;
+	--color-link: #7c3aed;
+	--color-muted: #6b7280;
+}
+
+body {
+	background-color: var(--color-base);
+	color: var(--color-text);
+}
+
+.prose {
+	--tw-prose-body: var(--color-text);
+	--tw-prose-headings: var(--color-heading);
+	--tw-prose-links: var(--color-link);
+	--tw-prose-bold: var(--color-text);
+	--tw-prose-code: var(--color-text);
+	--tw-prose-quotes: var(--color-muted);
+	--tw-prose-counters: var(--color-muted);
+	--tw-prose-bullets: var(--color-muted);
+	--tw-prose-hr: var(--color-muted);
+}
