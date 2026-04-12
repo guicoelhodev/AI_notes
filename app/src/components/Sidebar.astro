@@ -1,0 +1,58 @@
+---
+import { getCollection } from "astro:content";
+import SidebarNode from "./sidebar/SidebarNode.astro";
+
+interface Props {
+	currentSlug?: string;
+}
+
+const { currentSlug } = Astro.props;
+
+const docs = await getCollection("docs");
+const ids = docs.map((d) => d.id).sort();
+
+interface TreeNode {
+	label: string;
+	slug?: string;
+	children: TreeNode[];
+}
+
+function buildTree(paths: string[]): TreeNode[] {
+	const root: TreeNode[] = [];
+
+	for (const path of paths) {
+		const parts = path.split("/");
+		let current = root;
+
+		for (let i = 0; i < parts.length; i++) {
+			const part = parts[i];
+			let node = current.find((n) => n.label === part);
+
+			if (!node) {
+				const isFile = i === parts.length - 1;
+				node = {
+					label: part,
+					slug: isFile ? path : undefined,
+					children: [],
+				};
+				current.push(node);
+			}
+
+			current = node.children;
+		}
+	}
+
+	return root;
+}
+
+const tree = buildTree(ids);
+---
+
+<nav class="h-full overflow-y-auto p-4">
+	<a href="/" class="block text-lg font-bold mb-4 text-[var(--color-heading)]">IA Notes</a>
+	<ul class="space-y-1">
+		{tree.map((node) => (
+			<SidebarNode node={node} currentSlug={currentSlug} depth={0} />
+		))}
+	</ul>
+</nav>

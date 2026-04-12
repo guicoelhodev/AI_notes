@@ -1,7 +1,18 @@
 ---
 import Layout from "../layout/Layout.astro";
+import { getCollection, render } from "astro:content";
+
+const docs = await getCollection("docs");
+const firstDoc = docs.sort((a, b) => a.id.localeCompare(b.id))[0];
+const { Content } = firstDoc ? await render(firstDoc) : { Content: () => null };
 ---
 
-<Layout title="Astro">
-	<h1 class="text-red-800">Astro</h1>
+<Layout title="IA Notes" currentSlug={firstDoc?.id}>
+	{firstDoc ? (
+		<article class="prose max-w-none">
+			<Content />
+		</article>
+	) : (
+		<p>Nenhum documento encontrado.</p>
+	)}
 </Layout>

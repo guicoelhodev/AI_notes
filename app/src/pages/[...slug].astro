@@ -1,5 +1,5 @@
 ---
-import Layout from "../../layout/Layout.astro";
+import Layout from "../layout/Layout.astro";
 import { getCollection, render } from "astro:content";
 
 export async function getStaticPaths() {
@@ -14,8 +14,8 @@ const { doc } = Astro.props;
 const { Content } = await render(doc);
 ---
 
-<Layout title={doc.id}>
-	<article class="prose prose-invert max-w-none">
+<Layout title={doc.id} currentSlug={doc.id}>
+	<article class="prose max-w-none">
 		<Content />
 	</article>
 </Layout>

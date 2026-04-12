@@ -1,0 +1,51 @@
+---
+interface TreeNode {
+	label: string;
+	slug?: string;
+	children: TreeNode[];
+}
+
+interface Props {
+	node: TreeNode;
+	currentSlug?: string;
+	depth: number;
+}
+
+const { node, currentSlug, depth } = Astro.props;
+
+function formatLabel(label: string): string {
+	return label
+		.replace(/-/g, " ")
+		.replace(/\b\w/g, (c) => c.toUpperCase())
+		.replace(/\.(md|mdx)$/, "");
+}
+
+import SidebarNode from "./SidebarNode.astro";
+---
+
+<li>
+	{node.children.length > 0 ? (
+		<div>
+			<span class="block text-sm font-semibold text-[var(--color-heading)] py-1">
+				{formatLabel(node.label)}
+			</span>
+			<ul class:list={["space-y-1", depth > 0 && "ml-3", "ml-3", "mt-1"]}>
+				{node.children.map((child) => (
+					<SidebarNode node={child} currentSlug={currentSlug} depth={depth + 1} />
+				))}
+			</ul>
+		</div>
+	) : (
+		<a
+			href={`/${node.slug}`}
+			class:list={[
+				"block text-sm py-1 px-2 rounded transition-colors",
+				currentSlug === node.slug
+					? "bg-[var(--color-heading)]/20 text-[var(--color-heading)] font-medium"
+					: "text-[var(--color-text)] hover:bg-[var(--color-surface)]",
+			]}
+		>
+			{formatLabel(node.label)}
+		</a>
+	)}
+</li>
