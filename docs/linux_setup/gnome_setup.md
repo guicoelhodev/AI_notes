@@ -1,115 +1,115 @@
 # GNOME Setup
 
-> Configurações do GNOME 42 em notebook corporativo com monitor externo.
-> Todas as mudanças são por usuário (não afetam outros usuários do sistema).
+> GNOME 42 configuration on a corporate laptop with an external monitor.
+> All changes are per-user (do not affect other system users).
 
-## 1. Teclado
+## 1. Keyboard
 
-Layout US International (cedilha e acentos funcionam):
+US International layout (cedilla and accents work):
 
 ```bash
 gsettings set org.gnome.desktop.input-sources sources "[('xkb', 'us+intl')]"
 ```
 
-## 2. Extensões
+## 2. Extensions
 
-### Instalar gerenciador de extensões
+### Install extension manager
 
 ```bash
 sudo apt install gnome-shell-extension-manager
 ```
 
-### Instalar Forge (tiling manager i3-like)
+### Install Forge (i3-like tiling manager)
 
-Forge é uma extensão GNOME Shell que adiciona tiling de janelas sem alterar profundamente o sistema.
+Forge is a GNOME Shell extension that adds window tiling without deep system changes.
 
-Extensão disponível em: https://github.com/forge-ext/forge (branch `legacy` para GNOME 42)
-Requer logout/login após instalação para ativar.
+Available at: https://github.com/forge-ext/forge (branch `legacy` for GNOME 42)
+Requires logout/login after installation to activate.
 
 ## 3. Workspaces
 
-### Workspaces fixos (6) com independência por monitor
+### Static workspaces (6) with per-monitor independence
 
-Workspaces dinâmicos são removidos automaticamente quando ficam vazios, o que
-quebra os atalhos Win+1..9. Workspaces fixos resolvem isso.
+Dynamic workspaces are automatically removed when empty, which breaks
+the Win+1..9 shortcuts. Static workspaces fix this.
 
 ```bash
 gsettings set org.gnome.mutter dynamic-workspaces false
 gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
-# Cada monitor tem seus próprios workspaces independentes
+# Each monitor has its own independent workspaces
 gsettings set org.gnome.mutter workspaces-only-on-primary false
 ```
 
-## 4. Atalhos
+## 4. Shortcuts
 
-Todos os atalhos usam a tecla `Super` (tecla Windows).
+All shortcuts use the `Super` key (Windows key).
 
-### Navegação entre workspaces
+### Workspace navigation
 
-| Atalho | Ação |
-|--------|------|
-| `Win+1..6` | Ir para workspace 1..6 |
-| `Win+Shift+1..6` | Mover janela para workspace 1..6 |
+| Shortcut | Action |
+|----------|--------|
+| `Win+1..6` | Go to workspace 1..6 |
+| `Win+Shift+1..6` | Move window to workspace 1..6 |
 
 ```bash
-# Limpar conflitos com dash-to-dock e switch-to-application
+# Clear conflicts with dash-to-dock and switch-to-application
 for i in $(seq 1 9); do
   gsettings set org.gnome.shell.keybindings switch-to-application-$i "[]"
   gsettings set org.gnome.shell.extensions.dash-to-dock app-hotkey-$i "[]"
 done
 
-# Configurar atalhos de workspace
+# Configure workspace shortcuts
 for i in $(seq 1 6); do
   gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-$i "['<Super>$i']"
   gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-$i "['<Super><Shift>$i']"
 done
 ```
 
-### Foco entre janelas (Forge, estilo vim)
+### Window focus (Forge, vim-style)
 
-| Atalho | Ação |
-|--------|------|
-| `Win+H` | Focar janela à esquerda |
-| `Win+L` | Focar janela à direita |
-| `Win+K` | Focar janela acima |
-| `Win+J` | Focar janela abaixo |
+| Shortcut | Action |
+|----------|--------|
+| `Win+H` | Focus window to the left |
+| `Win+L` | Focus window to the right |
+| `Win+K` | Focus window above |
+| `Win+J` | Focus window below |
 
-Esses atalhos já vêm configurados no Forge, mas conflitam com atalhos do GNOME
-que precisam ser limpos:
+These shortcuts come pre-configured in Forge, but conflict with GNOME
+shortcuts that need to be cleared:
 
 ```bash
-# Limpar conflito: Super+H = minimizar (GNOME)
+# Clear conflict: Super+H = minimize (GNOME)
 gsettings set org.gnome.desktop.wm.keybindings minimize "[]"
-# Limpar conflito: Super+L = bloquear tela (GNOME)
+# Clear conflict: Super+L = lock screen (GNOME)
 gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
 ```
 
-### Fechar janela
+### Close window
 
-| Atalho | Ação |
-|--------|------|
-| `Win+Q` | Fechar janela focada |
+| Shortcut | Action |
+|----------|--------|
+| `Win+Q` | Close focused window |
 
 ```bash
-# Limpar conflito: Super+Q = atalho do dash-to-dock
+# Clear conflict: Super+Q = dash-to-dock shortcut
 gsettings set org.gnome.shell.extensions.dash-to-dock shortcut "[]"
 gsettings set org.gnome.shell.extensions.dash-to-dock shortcut-text ''
-# Configurar Win+Q para fechar
+# Configure Win+Q to close
 gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
 ```
 
-### Aplicar mudanças de atalhos
+### Apply shortcut changes
 
-Após configurar atalhos do Forge, recarregue a extensão:
+After configuring Forge shortcuts, reload the extension:
 
 ```bash
 gnome-extensions disable forge@jmmaranan.com && gnome-extensions enable forge@jmmaranan.com
 ```
 
-## 5. Animações
+## 5. Animations
 
-Desativa todas as animações do GNOME (transições de workspace, abrir apps, etc.).
-Sem impacto em performance — workspaces são apenas organizadores lógicos.
+Disables all GNOME animations (workspace transitions, app open, etc.).
+No performance impact — workspaces are just logical organizers.
 
 ```bash
 gsettings set org.gnome.desktop.interface enable-animations false
