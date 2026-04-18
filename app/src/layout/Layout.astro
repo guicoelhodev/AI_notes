@@ -5,6 +5,7 @@ import Sidebar from "../components/Sidebar.astro";
 import SearchModal from "../components/SearchModal.astro";
 import SearchIcon from "../icons/search.svg?raw";
 import MenuIcon from "../icons/menu.svg?raw";
+import IaIcon from "../icons/ia-icon.svg?raw";
 import { getCollection, render } from "astro:content";
 
 interface Props {
@@ -51,7 +52,7 @@ const searchItems = await Promise.all(
 			class="fixed inset-0 bg-black/50 z-30 hidden"
 		></div>
 
-		<main class="flex-1 overflow-y-auto p-8">
+		<main class="flex-1 overflow-y-auto p-8 pb-24">
 			<div class="fixed top-4 right-4 z-50 flex items-center gap-2">
 				<button
 					id="search-trigger"
@@ -75,6 +76,14 @@ const searchItems = await Promise.all(
 		</main>
 
 		<SearchModal items={searchItems} />
+
+		<button
+			id="copy-context-btn"
+			class="fixed bottom-4 right-4 z-50 flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--color-surface)] hover:opacity-80 transition-opacity cursor-pointer text-[var(--color-heading)] text-base border border-[var(--color-muted)]/20"
+		>
+			<span class="w-5 h-5" set:html={IaIcon} />
+			<span>Copy context</span>
+		</button>
 
 		<style is:inline>
 			@media (max-width: 767px) {
@@ -139,6 +148,27 @@ const searchItems = await Promise.all(
 			}
 			setupCopyButtons();
 			document.addEventListener("astro:page-load", setupCopyButtons);
+
+			function setupCopyContext() {
+				var btn = document.getElementById("copy-context-btn");
+				if (!btn) return;
+				btn.addEventListener("click", function () {
+					var prose = document.querySelector(".prose");
+					if (!prose) return;
+					var h1 = prose.querySelector("h1");
+					var title = h1 ? h1.textContent : document.title;
+					var content = prose.textContent.trim();
+					var context = "# " + title + "\n\n" + content;
+					navigator.clipboard.writeText(context).then(function () {
+						var label = btn.querySelector("span:last-child");
+						var original = label.textContent;
+						label.textContent = "Copied!";
+						setTimeout(function () { label.textContent = original; }, 2000);
+					});
+				});
+			}
+			setupCopyContext();
+			document.addEventListener("astro:page-load", setupCopyContext);
 		</script>
 	</body>
 </html>
