@@ -18,6 +18,12 @@ bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
 
+set-window-option -g mode-keys vi
+
+#bind Escape copy-mode
+bind-key -T copy-mode-vi v send-keys -X begin-selection
+bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
+
 set-option -g status-position bottom
 
 # List of plugins
@@ -54,6 +60,8 @@ bind-key o choose-session
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
+
+
 ```
 
 ## Sessionizer
