@@ -84,6 +84,16 @@ gsettings set org.gnome.desktop.wm.keybindings minimize "[]"
 gsettings set org.gnome.settings-daemon.plugins.media-keys screensaver "[]"
 ```
 
+### Toggle maximize
+
+| Shortcut | Action |
+|----------|--------|
+| `Win+F` | Toggle maximize/restore window |
+
+```bash
+gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Super>f']"
+```
+
 ### Close window
 
 | Shortcut | Action |
