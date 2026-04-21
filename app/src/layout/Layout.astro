@@ -42,7 +42,7 @@ const searchItems = await Promise.all(
 	<body class="flex h-screen overflow-hidden">
 		<aside
 			id="sidebar"
-			class="fixed inset-y-0 right-0 z-40 w-full md:w-64 md:static md:shrink-0 border-r border-[var(--color-muted)]/20 bg-[var(--color-surface)]"
+			class="fixed inset-y-0 right-0 z-40 w-full md:w-64 md:static md:shrink-0 border-r border-(--color-muted)/20 bg-(--color-surface)"
 		>
 			<Sidebar currentSlug={currentSlug} />
 		</aside>
@@ -58,15 +58,15 @@ const searchItems = await Promise.all(
 					id="search-trigger"
 					type="button"
 					aria-label="Search"
-					class="flex items-center gap-2 p-2 rounded-lg bg-[var(--color-surface)] hover:opacity-80 transition-opacity cursor-pointer text-[var(--color-muted)]"
+					class="flex items-center gap-2 p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-muted)"
 				>
 					<span class="w-4 h-4 inline-block" set:html={SearchIcon} />
-					<kbd class="text-xs border border-[var(--color-muted)]/40 rounded px-1.5 py-0.5 hidden sm:inline">Ctrl+K</kbd>
+					<kbd class="text-xs border border-(--color-muted)/40 rounded px-1.5 py-0.5 hidden sm:inline">Ctrl+K</kbd>
 				</button>
 				<ThemeToggle />
 				<button
 					id="sidebar-toggle"
-					class="md:hidden p-2 rounded-lg bg-[var(--color-surface)] hover:opacity-80 transition-opacity cursor-pointer text-[var(--color-text)]"
+					class="md:hidden p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-text)"
 					aria-label="Toggle menu"
 				>
 					<span class="w-5 h-5 inline-block" set:html={MenuIcon} />
@@ -79,7 +79,7 @@ const searchItems = await Promise.all(
 
 		<button
 			id="copy-context-btn"
-			class="fixed bottom-4 right-4 z-50 flex items-center gap-2 px-4 py-2.5 rounded-lg bg-[var(--color-surface)] hover:opacity-80 transition-opacity cursor-pointer text-[var(--color-heading)] text-base border border-[var(--color-muted)]/20"
+			class="fixed bottom-4 right-4 z-50 flex items-center gap-2 px-4 py-2.5 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-heading) text-base border border-(--color-muted)/20"
 		>
 			<span class="w-5 h-5" set:html={IaIcon} />
 			<span>Copy context</span>

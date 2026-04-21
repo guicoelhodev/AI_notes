@@ -9,18 +9,18 @@ const { items } = Astro.props;
 ---
 
 <div id="search-overlay" class="fixed inset-0 bg-black/50 z-50 hidden items-start justify-center pt-[20vh]">
-	<div id="search-modal" class="w-full max-w-lg mx-4 rounded-lg border border-[var(--color-muted)]/30 bg-[var(--color-surface)] shadow-2xl overflow-hidden">
-		<div class="flex items-center gap-2 px-4 py-3 border-b border-[var(--color-muted)]/20">
-			<span class="w-4 h-4 text-[var(--color-muted)] shrink-0 inline-block" set:html={SearchIcon} />
+	<div id="search-modal" class="w-full max-w-lg mx-4 rounded-lg border border-(--color-muted)/30 bg-(--color-surface) shadow-2xl overflow-hidden">
+		<div class="flex items-center gap-2 px-4 py-3 border-b border-(--color-muted)/20">
+			<span class="w-4 h-4 text-(--color-muted) shrink-0 inline-block" set:html={SearchIcon} />
 			<input
 				id="search-input"
 				type="text"
 				placeholder="Search notes..."
 				autocomplete="off"
 				spellcheck="false"
-				class="flex-1 bg-transparent outline-none text-[var(--color-text)] placeholder:text-[var(--color-muted)]"
+				class="flex-1 bg-transparent outline-none text-(--color-text) placeholder:text-(--color-muted)"
 			/>
-			<kbd class="text-xs text-[var(--color-muted)] border border-[var(--color-muted)]/30 rounded px-1.5 py-0.5">ESC</kbd>
+			<kbd class="text-xs text-(--color-muted) border border-(--color-muted)/30 rounded px-1.5 py-0.5">ESC</kbd>
 		</div>
 		<ul id="search-results" class="max-h-64 overflow-y-auto">
 		</ul>
@@ -78,7 +78,7 @@ const { items } = Astro.props;
 			activeIndex = -1;
 
 			if (list.length === 0) {
-				results.innerHTML = '<li class="px-4 py-3 text-sm text-[var(--color-muted)]">No results</li>';
+				results.innerHTML = '<li class="px-4 py-3 text-sm text-(--color-muted)">No results</li>';
 				return;
 			}
 
@@ -93,24 +93,24 @@ const { items } = Astro.props;
 					let last = 0;
 					for (const [start, end] of match.indices) {
 						result += escapeHtml(title.slice(last, start));
-						result += `<mark class="bg-[var(--color-heading)]/30 text-[var(--color-heading)] rounded-sm">${escapeHtml(title.slice(start, end + 1))}</mark>`;
+						result += `<mark class="bg-(--color-heading)/30 text-(--color-heading) rounded-sm">${escapeHtml(title.slice(start, end + 1))}</mark>`;
 						last = end + 1;
 					}
 					result += escapeHtml(title.slice(last));
 					html = result;
 				}
 
-				li.innerHTML = `<a href="/${item.item.id}" class="block px-4 py-2.5 text-sm text-[var(--color-text)] hover:bg-[var(--color-heading)]/10 cursor-pointer transition-colors">${html}</a>`;
+				li.innerHTML = `<a href="/${item.item.id}" class="block px-4 py-2.5 text-sm text-(--color-text) hover:bg-(--color-heading)/10 cursor-pointer transition-colors">${html}</a>`;
 				li.dataset.index = String(i);
 				results.appendChild(li);
 			});
 		}
 
 		function updateActive(items: NodeListOf<Element>) {
-			items.forEach((el) => el.querySelector("a")?.classList.remove("bg-[var(--color-heading)]/10"));
+			items.forEach((el) => el.querySelector("a")?.classList.remove("bg-(--color-heading)/10"));
 			if (items[activeIndex]) {
 				const el = items[activeIndex].querySelector("a");
-				el?.classList.add("bg-[var(--color-heading)]/10");
+				el?.classList.add("bg-(--color-heading)/10");
 				el?.scrollIntoView({ block: "nearest" });
 			}
 		}

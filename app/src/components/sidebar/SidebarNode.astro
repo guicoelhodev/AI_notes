@@ -37,7 +37,7 @@ function hasActiveChild(n: TreeNode, slug?: string): boolean {
 	{node.children.length > 0 ? (
 		<div>
 			<button
-				class="flex items-center justify-between w-full text-sm font-semibold text-[var(--color-heading)] py-1 px-2 rounded hover:bg-[var(--color-surface)] transition-colors cursor-pointer"
+				class="flex items-center justify-between w-full text-sm font-semibold text-(--color-heading) py-1 px-2 rounded hover:bg-(--color-surface) transition-colors cursor-pointer"
 				aria-expanded={isOpen ? "true" : "false"}
 				onclick="const ul = this.nextElementSibling; const arrow = this.querySelector('.arrow'); const expanded = ul.classList.toggle('hidden'); arrow.style.transform = expanded ? 'rotate(-90deg)' : ''; this.setAttribute('aria-expanded', !expanded);"
 			>
@@ -54,9 +54,9 @@ function hasActiveChild(n: TreeNode, slug?: string): boolean {
 		<a
 			href={`/${node.slug}`}
 			class:list={[
-				"block text-sm py-1 px-2 rounded transition-colors text-[var(--color-text)]",
-				currentSlug === node.slug && "bg-[var(--color-heading)]/20 font-medium",
-				currentSlug !== node.slug && "hover:bg-[var(--color-surface)]",
+				"block text-sm py-1 px-2 rounded transition-colors text-(--color-text)",
+				currentSlug === node.slug && "bg-(--color-heading)/20 font-medium",
+				currentSlug !== node.slug && "hover:bg-(--color-surface)",
 			]}
 		>
 			{formatLabel(node.label)}

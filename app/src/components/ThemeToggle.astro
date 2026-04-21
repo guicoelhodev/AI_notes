@@ -3,7 +3,7 @@ import MoonIcon from "../icons/moon.svg?raw";
 import SunIcon from "../icons/sun.svg?raw";
 ---
 
-<button id="theme-toggle" type="button" aria-label="Toggle theme" class="grid place-content-center p-2 rounded-lg bg-[var(--color-surface)] hover:opacity-80 transition-opacity cursor-pointer">
+<button id="theme-toggle" type="button" aria-label="Toggle theme" class="grid place-content-center p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer">
 	<span id="icon-moon" class="w-5 h-5" set:html={MoonIcon} />
 	<span id="icon-sun" class="w-5 h-5" style="display:none" set:html={SunIcon} />
 </button>
