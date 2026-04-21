@@ -21,6 +21,7 @@ function formatLabel(label: string): string {
 }
 
 import ChevronDownIcon from "../../icons/chevron-down.svg?raw";
+import PlusIcon from "../../icons/plus.svg?raw";
 import Popover from "../Popover.astro";
 import SidebarNode from "./SidebarNode.astro";
 
@@ -37,7 +38,7 @@ function hasActiveChild(n: TreeNode, slug?: string): boolean {
 <li>
 	{node.children.length > 0 ? (
 		<div>
-			<div class="flex items-center gap-2 py-1 px-2 rounded hover:bg-(--color-surface) transition-colors group">
+			<div class="flex items-center py-1 rounded hover:bg-(--color-surface) transition-colors group">
 				<button
 					class="flex items-center gap-2 flex-1 min-w-0 text-sm font-semibold text-(--color-heading) cursor-pointer"
 					aria-expanded={isOpen ? "true" : "false"}
@@ -49,6 +50,13 @@ function hasActiveChild(n: TreeNode, slug?: string): boolean {
 				<Popover>
 					<slot />
 				</Popover>
+				<button
+					type="button"
+					aria-label="Add"
+					class="aspect-square p-1 rounded hover:bg-(--color-muted)/10 transition-colors cursor-pointer text-(--color-muted) opacity-0 group-hover:opacity-100"
+				>
+					<span class="w-3.5 h-3.5 inline-block" set:html={PlusIcon} />
+				</button>
 			</div>
 			<ul class:list={["space-y-1 ml-3 mt-1", !isOpen && "hidden"]}>
 				{node.children.map((child) => (
