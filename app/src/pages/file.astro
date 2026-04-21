@@ -17,8 +17,6 @@ if (path) {
 		content = `# Error\n\nFile not found: ${path}`;
 	}
 }
-
-const isEditing = false;
 ---
 
 <Layout title={path ? `${path} — AI Notes` : "AI Notes"}>
@@ -27,7 +25,7 @@ const isEditing = false;
 			<div id="editor" class="h-full"></div>
 		</div>
 
-		<PageActions isEditing={isEditing} path={path ?? '/file-not-found'} />
+		<PageActions path={path ?? '/file-not-found'} />
 	</div>
 
 	<div id="editor-content" class="hidden">{content}</div>
@@ -39,50 +37,13 @@ const isEditing = false;
 		const content = el ? el.textContent : "# Select a file";
 		el?.remove();
 
-		let originalContent = content;
-		let isEditing = false;
-
-		function createEditor(defaultValue: string, readonly: boolean) {
-			const editor = new Crepe({
-				root: "#editor",
-				defaultValue,
-			});
-
-			editor.create();
-			editor.setReadonly(readonly);
-			(window as any).__editor = editor;
-			return editor;
-		}
-
-		let editor = createEditor(content, true);
-
-		function setEditing(value: boolean) {
-			isEditing = value;
-			editor.setReadonly(!value);
-			document.dispatchEvent(new CustomEvent("editor:mode-change", {
-				detail: { isEditing: value },
-			}));
-		}
-
-		document.addEventListener("page:edit", () => {
-			originalContent = editor.getMarkdown();
-			setEditing(true);
+		const editor = new Crepe({
+			root: "#editor",
+			defaultValue: content,
 		});
 
-		document.addEventListener("page:cancel", () => {
-			editor.destroy();
-			editor = createEditor(originalContent, true);
-			isEditing = false;
-			document.dispatchEvent(new CustomEvent("editor:mode-change", {
-				detail: { isEditing: false },
-			}));
-		});
-
-		document.addEventListener("page:save", () => {
-			const markdown = editor.getMarkdown();
-			console.log("Save:", markdown);
-			setEditing(false);
-		});
-
+		editor.create();
+		(window as any).__editor = editor;
+		(window as any).__originalContent = content;
 	</script>
 </Layout>

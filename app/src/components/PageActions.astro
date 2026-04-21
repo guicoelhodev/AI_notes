@@ -1,12 +1,12 @@
 ---
-import IaIcon from "../icons/ia-icon.svg?raw";
+import SaveIcon from "../icons/save.svg?raw";
+import SpinnerIcon from "../icons/spinner.svg?raw";
 
 interface Props {
-	isEditing: boolean;
 	path?: string;
 }
 
-const { isEditing, path } = Astro.props;
+const { path } = Astro.props;
 ---
 
 <div id="page-actions" class="sticky bottom-0 flex items-center justify-between px-4 py-3 w-full min-w-0 bg-transparent">
@@ -14,97 +14,72 @@ const { isEditing, path } = Astro.props;
 		{path || "No file selected"}
 	</h1>
 
-	<div id="view-actions" class:list={["flex items-center gap-2", isEditing && "hidden"]}>
-		<button
-			id="copy-context-btn"
-			type="button"
-			class="flex items-center gap-2 px-4 py-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-heading) text-sm border border-(--color-muted)/20"
-		>
-			<span class="w-5 h-5" set:html={IaIcon} />
-			<span>Copy context</span>
-		</button>
-
-		<button
-			id="edit-btn"
-			type="button"
-			class="px-4 py-2 rounded-lg bg-(--color-heading) text-white text-sm font-medium hover:opacity-80 transition-opacity cursor-pointer"
-		>
-			Editar
-		</button>
-	</div>
-
-	<div id="edit-actions" class:list={["items-center gap-2", !isEditing && "hidden"]}>
-		<button
-			id="cancel-btn"
-			type="button"
-			class="px-4 py-2 rounded-lg border border-(--color-muted)/20 text-(--color-text) text-sm hover:opacity-80 transition-opacity cursor-pointer"
-		>
-			Cancel
-		</button>
-
 		<button
 			id="save-btn"
 			type="button"
-			class="px-4 py-2 rounded-lg bg-(--color-heading) text-white text-sm font-medium hover:opacity-80 transition-opacity cursor-pointer"
+			aria-label="Save"
+			class="save-btn flex items-center gap-2 p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-muted) disabled:opacity-50 disabled:cursor-not-allowed"
 		>
-			Save
+			<span id="save-icon" class="w-4 h-4" set:html={SaveIcon} />
+			<span id="save-spinner" class="w-4 h-4 animate-spin hidden" set:html={SpinnerIcon} />
+			<kbd class="text-xs border border-(--color-muted)/40 rounded px-1.5 py-0.5 hidden sm:inline">Ctrl+S</kbd>
 		</button>
 	</div>
-</div>
 
-<script>
+	<div id="toast" class="fixed bottom-16 right-4 px-4 py-2 rounded-lg bg-(--color-surface) border border-(--color-muted)/20 text-(--color-text) text-sm hidden opacity-0 transition-opacity duration-300"></div>
+
+	<script>
 	function setupPageActions() {
-		const viewActions = document.getElementById("view-actions");
-		const editActions = document.getElementById("edit-actions");
-		const editBtn = document.getElementById("edit-btn");
-		const cancelBtn = document.getElementById("cancel-btn");
-		const saveBtn = document.getElementById("save-btn");
-		const copyContextBtn = document.getElementById("copy-context-btn");
+		const saveBtn = document.getElementById("save-btn") as HTMLButtonElement;
+		const saveIcon = document.getElementById("save-icon");
+		const saveSpinner = document.getElementById("save-spinner");
+		if (!saveBtn || !saveIcon || !saveSpinner) return;
 
-		if (!viewActions || !editActions) return;
-
-		function toggleUI(isEditing: boolean) {
-			if (isEditing) {
-				viewActions.classList.add("hidden");
-				viewActions.classList.remove("flex");
-				editActions.classList.remove("hidden");
-				editActions.classList.add("flex");
-			} else {
-				editActions.classList.add("hidden");
-				editActions.classList.remove("flex");
-				viewActions.classList.remove("hidden");
-				viewActions.classList.add("flex");
-			}
+		function setLoading(loading: boolean) {
+			saveBtn.disabled = loading;
+			saveIcon?.classList.toggle("hidden", loading);
+			saveSpinner?.classList.toggle("hidden", !loading);
 		}
 
-		document.addEventListener("editor:mode-change", ((e: CustomEvent) => {
-			toggleUI(e.detail.isEditing);
+		function showToast(message: string) {
+			const toast = document.getElementById("toast");
+			if (!toast) return;
+			toast.textContent = message;
+			toast.classList.remove("hidden");
+			requestAnimationFrame(() => toast.classList.remove("opacity-0"));
+			setTimeout(() => {
+				toast.classList.add("opacity-0");
+				setTimeout(() => toast.classList.add("hidden"), 300);
+			}, 2000);
+		}
+
+		function save() {
+			if (saveBtn.disabled) return;
+			const markdown = (window as any).__editor?.getMarkdown();
+			if (!markdown) return;
+
+			const original = (window as any).__originalContent ?? "";
+			if (markdown.trim() === original.trim()) {
+				showToast("No changes to save");
+				return;
+			}
+
+			setLoading(true);
+			setTimeout(() => {
+				console.log("Saved:", markdown);
+				(window as any).__originalContent = markdown;
+				setLoading(false);
+			}, 2000);
+		}
+
+		saveBtn.addEventListener("click", save);
+
+		document.addEventListener("keydown", ((e: KeyboardEvent) => {
+			if ((e.ctrlKey || e.metaKey) && e.key === "s") {
+				e.preventDefault();
+				save();
+			}
 		}) as EventListener);
-
-		editBtn?.addEventListener("click", () => {
-			document.dispatchEvent(new CustomEvent("page:edit"));
-		});
-
-		cancelBtn?.addEventListener("click", () => {
-			document.dispatchEvent(new CustomEvent("page:cancel"));
-		});
-
-		saveBtn?.addEventListener("click", () => {
-			document.dispatchEvent(new CustomEvent("page:save"));
-		});
-
-		copyContextBtn?.addEventListener("click", () => {
-			const editor = (window as any).__editor;
-			if (!editor) return;
-			const markdown = editor.getMarkdown();
-			navigator.clipboard.writeText(markdown).then(() => {
-				const label = copyContextBtn.querySelector("span:last-child");
-				if (!label) return;
-				const original = label.textContent;
-				label.textContent = "Copied!";
-				setTimeout(() => { label.textContent = original; }, 2000);
-			});
-		});
 	}
 
 	setupPageActions();
