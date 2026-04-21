@@ -1,5 +1,6 @@
 ---
 import Layout from "../layout/Layout.astro";
+import PageActions from "../components/PageActions.astro";
 import { getFile } from "../lib/github";
 import "../milkdown.css";
 
@@ -12,25 +13,21 @@ let content = "";
 if (path) {
 	try {
 		content = await getFile(path);
-
-		console.log('content', content)
 	} catch (error: any) {
 		content = `# Error\n\nFile not found: ${path}`;
 	}
 }
+
+const isEditing = false;
 ---
 
 <Layout title={path ? `${path} — AI Notes` : "AI Notes"}>
-	<div class="flex flex-col h-full -m-8">
-		<header class="flex items-center justify-between px-4 py-2 border-b border-(--color-muted)/20 bg-(--color-surface)">
-			<h1 class="text-sm font-medium text-(--color-text)">
-				{path || "No file selected"}
-			</h1>
-		</header>
-
-		<div class="flex-1 overflow-hidden">
+	<div class="h-full flex flex-col justify-between">
+		<div class="flex-1 min-h-0 overflow-y-auto">
 			<div id="editor" class="h-full"></div>
 		</div>
+
+		<PageActions isEditing={isEditing} path={path ?? '/file-not-found'} />
 	</div>
 
 	<div id="editor-content" class="hidden">{content}</div>
@@ -42,11 +39,50 @@ if (path) {
 		const content = el ? el.textContent : "# Select a file";
 		el?.remove();
 
-		const editor = new Crepe({
-			root: "#editor",
-			defaultValue: content,
+		let originalContent = content;
+		let isEditing = false;
+
+		function createEditor(defaultValue: string, readonly: boolean) {
+			const editor = new Crepe({
+				root: "#editor",
+				defaultValue,
+			});
+
+			editor.create();
+			editor.setReadonly(readonly);
+			(window as any).__editor = editor;
+			return editor;
+		}
+
+		let editor = createEditor(content, true);
+
+		function setEditing(value: boolean) {
+			isEditing = value;
+			editor.setReadonly(!value);
+			document.dispatchEvent(new CustomEvent("editor:mode-change", {
+				detail: { isEditing: value },
+			}));
+		}
+
+		document.addEventListener("page:edit", () => {
+			originalContent = editor.getMarkdown();
+			setEditing(true);
 		});
 
-		editor.create();
+		document.addEventListener("page:cancel", () => {
+			editor.destroy();
+			editor = createEditor(originalContent, true);
+			isEditing = false;
+			document.dispatchEvent(new CustomEvent("editor:mode-change", {
+				detail: { isEditing: false },
+			}));
+		});
+
+		document.addEventListener("page:save", () => {
+			const markdown = editor.getMarkdown();
+			console.log("Save:", markdown);
+			setEditing(false);
+		});
+
 	</script>
 </Layout>

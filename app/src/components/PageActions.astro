@@ -1,0 +1,112 @@
+---
+import IaIcon from "../icons/ia-icon.svg?raw";
+
+interface Props {
+	isEditing: boolean;
+	path?: string;
+}
+
+const { isEditing, path } = Astro.props;
+---
+
+<div id="page-actions" class="sticky bottom-0 flex items-center justify-between px-4 py-3 w-full min-w-0 bg-transparent">
+	<h1 id="page-title" class="text-sm font-medium text-(--color-text) truncate px-3 py-1.5 rounded-md bg-(--color-muted)/10">
+		{path || "No file selected"}
+	</h1>
+
+	<div id="view-actions" class:list={["flex items-center gap-2", isEditing && "hidden"]}>
+		<button
+			id="copy-context-btn"
+			type="button"
+			class="flex items-center gap-2 px-4 py-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-heading) text-sm border border-(--color-muted)/20"
+		>
+			<span class="w-5 h-5" set:html={IaIcon} />
+			<span>Copy context</span>
+		</button>
+
+		<button
+			id="edit-btn"
+			type="button"
+			class="px-4 py-2 rounded-lg bg-(--color-heading) text-white text-sm font-medium hover:opacity-80 transition-opacity cursor-pointer"
+		>
+			Editar
+		</button>
+	</div>
+
+	<div id="edit-actions" class:list={["items-center gap-2", !isEditing && "hidden"]}>
+		<button
+			id="cancel-btn"
+			type="button"
+			class="px-4 py-2 rounded-lg border border-(--color-muted)/20 text-(--color-text) text-sm hover:opacity-80 transition-opacity cursor-pointer"
+		>
+			Cancel
+		</button>
+
+		<button
+			id="save-btn"
+			type="button"
+			class="px-4 py-2 rounded-lg bg-(--color-heading) text-white text-sm font-medium hover:opacity-80 transition-opacity cursor-pointer"
+		>
+			Save
+		</button>
+	</div>
+</div>
+
+<script>
+	function setupPageActions() {
+		const viewActions = document.getElementById("view-actions");
+		const editActions = document.getElementById("edit-actions");
+		const editBtn = document.getElementById("edit-btn");
+		const cancelBtn = document.getElementById("cancel-btn");
+		const saveBtn = document.getElementById("save-btn");
+		const copyContextBtn = document.getElementById("copy-context-btn");
+
+		if (!viewActions || !editActions) return;
+
+		function toggleUI(isEditing: boolean) {
+			if (isEditing) {
+				viewActions.classList.add("hidden");
+				viewActions.classList.remove("flex");
+				editActions.classList.remove("hidden");
+				editActions.classList.add("flex");
+			} else {
+				editActions.classList.add("hidden");
+				editActions.classList.remove("flex");
+				viewActions.classList.remove("hidden");
+				viewActions.classList.add("flex");
+			}
+		}
+
+		document.addEventListener("editor:mode-change", ((e: CustomEvent) => {
+			toggleUI(e.detail.isEditing);
+		}) as EventListener);
+
+		editBtn?.addEventListener("click", () => {
+			document.dispatchEvent(new CustomEvent("page:edit"));
+		});
+
+		cancelBtn?.addEventListener("click", () => {
+			document.dispatchEvent(new CustomEvent("page:cancel"));
+		});
+
+		saveBtn?.addEventListener("click", () => {
+			document.dispatchEvent(new CustomEvent("page:save"));
+		});
+
+		copyContextBtn?.addEventListener("click", () => {
+			const editor = (window as any).__editor;
+			if (!editor) return;
+			const markdown = editor.getMarkdown();
+			navigator.clipboard.writeText(markdown).then(() => {
+				const label = copyContextBtn.querySelector("span:last-child");
+				if (!label) return;
+				const original = label.textContent;
+				label.textContent = "Copied!";
+				setTimeout(() => { label.textContent = original; }, 2000);
+			});
+		});
+	}
+
+	setupPageActions();
+	document.addEventListener("astro:page-load", setupPageActions);
+</script>

@@ -52,7 +52,7 @@ const searchItems = await Promise.all(
 			class="fixed inset-0 bg-black/50 z-30 hidden"
 		></div>
 
-		<main class="flex-1 overflow-y-auto p-8 pb-24">
+		<main class="flex-1 min-w-0 min-h-0 overflow-hidden">
 			<div class="fixed top-4 right-4 z-50 flex items-center gap-2">
 				<button
 					id="search-trigger"
@@ -76,14 +76,6 @@ const searchItems = await Promise.all(
 		</main>
 
 		<SearchModal items={searchItems} />
-
-		<button
-			id="copy-context-btn"
-			class="fixed bottom-4 right-4 z-50 flex items-center gap-2 px-4 py-2.5 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-heading) text-base border border-(--color-muted)/20"
-		>
-			<span class="w-5 h-5" set:html={IaIcon} />
-			<span>Copy context</span>
-		</button>
 
 		<style is:inline>
 			@media (max-width: 767px) {
