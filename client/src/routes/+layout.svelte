@@ -12,7 +12,7 @@
 	let { children } = $props();
 </script>
 
-<div class="flex h-screen">
+<div class="flex h-screen w-full">
 	<aside
 		class="fixed inset-y-0 left-0 z-40 w-full md:w-64 md:static md:shrink-0 border-r border-(--color-muted)/20 bg-(--color-surface) {sidebarState.isOpen ? 'open' : ''}"
 	>
