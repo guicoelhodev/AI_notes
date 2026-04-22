@@ -1,5 +1,7 @@
 ---
 import PlusIcon from "../icons/plus.svg?raw";
+import FolderIcon from "../icons/folder.svg?raw";
+import FileIcon from "../icons/file.svg?raw";
 import Popover from "./Popover.astro";
 ---
 
@@ -11,5 +13,172 @@ import Popover from "./Popover.astro";
 	<span class="w-3.5 h-3.5 inline-block" set:html={PlusIcon} />
 </button>
 <Popover>
-	<slot />
+	<button type="button" class="popover-action flex items-center gap-2 w-full text-left text-sm px-3 py-1.5 hover:bg-(--color-muted)/10 transition-colors cursor-pointer text-(--color-text)" data-action="create-folder">
+		<span class="w-4 h-4 shrink-0" set:html={FolderIcon} />
+		<span>Create Folder</span>
+	</button>
+	<button type="button" class="popover-action flex items-center gap-2 w-full text-left text-sm px-3 py-1.5 hover:bg-(--color-muted)/10 transition-colors cursor-pointer text-(--color-text)" data-action="create-file">
+		<span class="w-4 h-4 shrink-0" set:html={FileIcon} />
+		<span>Create File</span>
+	</button>
 </Popover>
+
+<script>
+	function handleCreateFile(ul: Element) {
+		ul.classList.remove("hidden");
+
+		if (ul.querySelector(".new-file-input")) return;
+
+		const li = document.createElement("li");
+		const input = document.createElement("input");
+		input.type = "text";
+		input.value = "New File";
+		input.className = "new-file-input w-full text-sm py-1 px-2 rounded border border-(--color-heading) bg-transparent text-(--color-text) outline-none";
+		li.appendChild(input);
+		ul.prepend(li);
+
+		requestAnimationFrame(() => {
+			input.focus();
+			input.select();
+		});
+
+		function confirmFile() {
+			const value = input.value.trim();
+			if (!value || value === "New File") {
+				li.remove();
+				return;
+			}
+
+			const filePath = ul.dataset.folderPath + "/" + value + ".md";
+			window.location.href = "/file?path=" + encodeURIComponent(filePath) + "&mode=create";
+		}
+
+		input.addEventListener("blur", confirmFile);
+		input.addEventListener("keydown", (ev) => {
+			if (ev.key === "Enter") {
+				ev.preventDefault();
+				input.blur();
+			} else if (ev.key === "Escape") {
+				li.remove();
+			} else if ([",", "."].includes(ev.key)) {
+				ev.preventDefault();
+			}
+		});
+	}
+
+	function handleCreateFolder(ul: Element) {
+		ul.classList.remove("hidden");
+
+		if (ul.querySelector(".new-folder-input")) return;
+
+		const li = document.createElement("li");
+		const input = document.createElement("input");
+		input.type = "text";
+		input.value = "New Folder";
+		input.className = "new-folder-input w-full text-sm py-1 px-2 rounded border border-(--color-heading) bg-transparent text-(--color-text) outline-none";
+		li.appendChild(input);
+		ul.prepend(li);
+
+		requestAnimationFrame(() => {
+			input.focus();
+			input.select();
+		});
+
+		function confirmFolder() {
+			const value = input.value.trim();
+			if (!value || value === "New Folder") {
+				li.remove();
+				return;
+			}
+
+			const folderPath = ul.dataset.folderPath + "/" + value;
+			li.innerHTML = `
+				<div>
+					<div class="flex items-center py-1 rounded hover:bg-(--color-surface) transition-colors group">
+						<button class="flex items-center gap-2 flex-1 min-w-0 text-sm font-semibold text-(--color-heading) cursor-pointer">
+							<span class="arrow w-3 h-3 transition-transform shrink-0 inline-block" style="transform: rotate(-90deg)"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg></span>
+							<span class="truncate">${value}</span>
+						</button>
+						<button type="button" aria-label="Add" class="folder-add-btn aspect-square p-1 rounded hover:bg-(--color-muted)/10 transition-colors cursor-pointer text-(--color-muted) opacity-0 group-hover:opacity-100">
+							<span class="w-3.5 h-3.5 inline-block"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+						</button>
+						<div class="relative inline-flex">
+							<button type="button" aria-label="Options" class="popover-trigger p-1 rounded hover:bg-(--color-surface) transition-colors cursor-pointer text-(--color-muted) opacity-0 group-hover:opacity-100">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-4 h-4"><circle cx="12" cy="5" r="2"/><circle cx="12" cy="12" r="2"/><circle cx="12" cy="19" r="2"/></svg>
+							</button>
+							<div class="popover-menu fixed bg-(--color-surface) border border-(--color-muted)/20 rounded-lg shadow-lg py-1 min-w-45 hidden z-50">
+								<button type="button" class="popover-action flex items-center gap-2 w-full text-left text-sm px-3 py-1.5 hover:bg-(--color-muted)/10 transition-colors cursor-pointer text-(--color-text)" data-action="create-folder">
+									<span class="w-4 h-4 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg></span>
+									<span>Create Folder</span>
+								</button>
+								<button type="button" class="popover-action flex items-center gap-2 w-full text-left text-sm px-3 py-1.5 hover:bg-(--color-muted)/10 transition-colors cursor-pointer text-(--color-text)" data-action="create-file">
+									<span class="w-4 h-4 shrink-0"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></span>
+									<span>Create File</span>
+								</button>
+							</div>
+						</div>
+					</div>
+					<ul class="space-y-1 ml-3 mt-1 hidden" data-folder-path="${folderPath}"></ul>
+				</div>
+			`;
+
+			const toggleBtn = li.querySelector("button");
+			const childUl = li.querySelector("ul");
+			const arrow = li.querySelector(".arrow");
+			toggleBtn?.addEventListener("click", () => {
+				const expanded = childUl?.classList.toggle("hidden");
+				if (arrow) arrow.style.transform = expanded ? "rotate(-90deg)" : "";
+			});
+
+			setupFolderActions();
+		}
+
+		input.addEventListener("blur", confirmFolder);
+		input.addEventListener("keydown", (ev) => {
+			if (ev.key === "Enter") {
+				ev.preventDefault();
+				input.blur();
+			} else if (ev.key === "Escape") {
+				li.remove();
+			}
+		});
+	}
+
+	function getFolderUl(el: Element): Element | null {
+		const folderRow = el.closest("li");
+		return folderRow?.querySelector("ul[data-folder-path]") ?? null;
+	}
+
+	function setupFolderActions() {
+		document.querySelectorAll(".popover-action[data-action]").forEach((btn) => {
+			if ((btn as HTMLElement).dataset.folderActionsSetup) return;
+			(btn as HTMLElement).dataset.folderActionsSetup = "true";
+
+			btn.addEventListener("click", () => {
+				const action = (btn as HTMLElement).dataset.action;
+				const menu = btn.closest(".popover-menu");
+				if (menu) menu.classList.add("hidden");
+
+				const ul = getFolderUl(btn);
+				if (!ul) return;
+
+				if (action === "create-file") handleCreateFile(ul);
+				if (action === "create-folder") handleCreateFolder(ul);
+			});
+		});
+
+		document.querySelectorAll(".folder-add-btn").forEach((btn) => {
+			if ((btn as HTMLElement).dataset.folderActionsSetup) return;
+			(btn as HTMLElement).dataset.folderActionsSetup = "true";
+
+			btn.addEventListener("click", () => {
+				const ul = getFolderUl(btn);
+				if (!ul) return;
+				handleCreateFile(ul);
+			});
+		});
+	}
+
+	setupFolderActions();
+	document.addEventListener("astro:page-load", setupFolderActions);
+</script>
