@@ -7,19 +7,13 @@
 
 <br />
 
-TESTE
-
-<br />
+TEST
 
 ## AMAZING
 
 ```JavaScript
 console.log('console.log')
 ```
-
-<br />
-
-<br />
 
 ## What is it?
 
