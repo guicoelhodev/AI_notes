@@ -54,7 +54,7 @@ import Popover from "./Popover.astro";
 
 			li.remove();
 
-			const newContent = "# " + formattedName + "\n";
+			const newContent = "# " + formattedName + "\n\n<br />\n\n";
 
 			if (typeof (window as any).__loadEditor === "function") {
 				(window as any).__loadEditor(filePath, newContent, "create");

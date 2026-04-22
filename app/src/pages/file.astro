@@ -20,7 +20,7 @@ if (path && mode !== "create") {
 } else if (path && mode === "create") {
 	const fileName = path.replace(/^.*\//, "").replace(/\.md$/, "");
 	const formattedName = fileName.replace(/[-_]/g, " ").replace(/\b\w/g, (c) => c.toUpperCase());
-	content = `# ${formattedName}\n`;
+	content = `# ${formattedName}\n\n<br />\n\n`;
 }
 ---
 
@@ -94,6 +94,11 @@ if (path && mode !== "create") {
 			});
 			newEditor.create();
 
+			if (mode === "create") {
+				const editable = editorEl.querySelector(".ProseMirror") as HTMLElement | null;
+				editable?.focus();
+			}
+
 			(window as any).__editor = newEditor;
 			(window as any).__originalContent = content;
 			(window as any).__filePath = path;
@@ -124,10 +129,18 @@ if (path && mode !== "create") {
 		});
 
 		editor.create();
+
+		const mode = new URLSearchParams(window.location.search).get("mode") || "";
+		if (mode === "create") {
+			const editorRoot = document.getElementById("editor");
+			const editable = editorRoot?.querySelector(".ProseMirror") as HTMLElement | null;
+			editable?.focus();
+		}
+
 		(window as any).__editor = editor;
 		(window as any).__originalContent = content;
 		(window as any).__filePath = new URLSearchParams(window.location.search).get("path") || "";
-		(window as any).__mode = new URLSearchParams(window.location.search).get("mode") || "";
+		(window as any).__mode = mode;
 
 		if ((window as any).__mode === "create") {
 			const filePath = (window as any).__filePath;
