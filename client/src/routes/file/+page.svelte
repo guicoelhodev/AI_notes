@@ -117,14 +117,14 @@
 	});
 </script>
 
-<div class="h-full flex flex-col justify-between">
-	<div class="flex-1 min-h-0 overflow-y-auto">
+<div class="h-full flex flex-col justify-between min-w-0">
+	<div class="flex-1 min-h-0 min-w-0 overflow-x-hidden overflow-y-auto">
 		{#if loading}
 			<div class="flex items-center justify-center h-full">
 				<p class="text-(--color-muted)">Loading...</p>
 			</div>
 		{:else}
-			<div id="editor" class="h-full" bind:this={editorEl}></div>
+			<div id="editor" class="h-full min-w-0 w-full" bind:this={editorEl}></div>
 		{/if}
 	</div>
 	<PageActions />

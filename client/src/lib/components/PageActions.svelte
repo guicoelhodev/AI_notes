@@ -17,7 +17,7 @@
 
 <svelte:window onkeydown={handleKeydown} />
 
-<div class="sticky bottom-0 flex items-center justify-between px-4 py-3 w-full min-w-0 bg-transparent">
+<div class="sticky bottom-0 flex items-center justify-between px-4 py-3 w-full bg-transparent">
 	<h1 class="text-sm font-medium text-[var(--color-text)] truncate px-3 py-1.5 rounded-md bg-[var(--color-muted)]/10">
 		{editorState.path || 'No file selected'}
 	</h1>

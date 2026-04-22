@@ -242,7 +242,29 @@ body {
 }
 
 .milkdown .ProseMirror {
-	padding: 2rem 6rem;
+	padding: 2rem 1.5rem;
+	min-width: 0;
+	max-width: 100%;
+	overflow-wrap: anywhere;
+	box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+	.milkdown .ProseMirror {
+		padding: 2rem 3rem;
+	}
+}
+
+@media (min-width: 1024px) {
+	.milkdown .ProseMirror {
+		padding: 2rem 4rem;
+	}
+}
+
+@media (min-width: 1280px) {
+	.milkdown .ProseMirror {
+		padding: 2rem 6rem;
+	}
 }
 
 .light .milkdown {
