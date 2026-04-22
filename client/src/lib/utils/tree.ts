@@ -29,7 +29,23 @@ export function buildTree(paths: string[]): TreeNode[] {
 		}
 	}
 
+	sortNodes(root);
 	return root;
+}
+
+function sortNodes(nodes: TreeNode[]): void {
+	for (const node of nodes) {
+		if (node.children.length > 0) {
+			sortNodes(node.children);
+		}
+	}
+	nodes.sort((a, b) => {
+		const aIsFolder = a.isFolder || a.children.length > 0;
+		const bIsFolder = b.isFolder || b.children.length > 0;
+		if (aIsFolder && !bIsFolder) return -1;
+		if (!aIsFolder && bIsFolder) return 1;
+		return a.label.localeCompare(b.label);
+	});
 }
 
 /**

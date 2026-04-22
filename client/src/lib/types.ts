@@ -8,6 +8,7 @@ export interface TreeNode {
 	label: string;
 	slug?: string;
 	children: TreeNode[];
+	isFolder?: boolean;
 }
 
 export interface SearchItem {
