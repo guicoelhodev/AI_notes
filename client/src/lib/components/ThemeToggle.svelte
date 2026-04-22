@@ -1,0 +1,26 @@
+<script lang="ts">
+	import { themeState } from '$lib/stores/theme.svelte';
+	import Moon from '$lib/icons/Moon.svelte';
+	import Sun from '$lib/icons/Sun.svelte';
+
+	$effect(() => {
+		if (themeState.theme === 'light') {
+			document.documentElement.classList.add('light');
+		} else {
+			document.documentElement.classList.remove('light');
+		}
+	});
+</script>
+
+<button
+	type="button"
+	aria-label="Toggle theme"
+	class="grid place-content-center p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer"
+	onclick={() => themeState.toggle()}
+>
+	{#if themeState.theme === 'light'}
+		<Sun class="w-5 h-5" />
+	{:else}
+		<Moon class="w-5 h-5" />
+	{/if}
+</button>
