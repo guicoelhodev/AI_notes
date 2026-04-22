@@ -67,8 +67,11 @@ const { path } = Astro.props;
 			const path = (window as any).__filePath ?? "";
 			if (!path) return;
 
+			const mode = (window as any).__mode || "";
+			const modeParam = mode ? `?mode=${mode}` : "";
+
 			setLoading(true);
-			fetch("/api/save", {
+			fetch(`/api/save${modeParam}`, {
 				method: "PUT",
 				headers: { "Content-Type": "application/json" },
 				body: JSON.stringify({ path, content: markdown }),
@@ -77,6 +80,16 @@ const { path } = Astro.props;
 				.then((data) => {
 					if (data.error) throw new Error(data.error);
 					(window as any).__originalContent = markdown;
+
+					if ((window as any).__mode === "create") {
+						(window as any).__mode = "";
+						history.replaceState(
+							{},
+							"",
+							`/file?path=${encodeURIComponent(path)}`
+						);
+					}
+
 					showToast("Saved successfully");
 				})
 				.catch((err) => {

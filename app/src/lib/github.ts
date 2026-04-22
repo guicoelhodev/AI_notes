@@ -92,3 +92,26 @@ export async function updateFile(path: string, content: string): Promise<void> {
 		throw { status: updateRes.status, message: error.message || 'Failed to update file' }
 	}
 }
+
+export async function createFile(path: string, content: string): Promise<void> {
+	const base64Content = Buffer.from(content).toString('base64')
+
+	const pathFile = path.replaceAll(' ', '_')
+	const res = await fetch(
+		`${GITHUB_API}/repos/${owner}/${repo}/contents/docs/${pathFile}`,
+		{
+			method: 'PUT',
+			headers: headers(),
+			body: JSON.stringify({
+				message: `docs: create ${path}`,
+				content: base64Content,
+				branch: 'master',
+			}),
+		}
+	)
+
+	if (!res.ok) {
+		const error = await res.json()
+		throw { status: res.status, message: error.message || 'Failed to create file' }
+	}
+}

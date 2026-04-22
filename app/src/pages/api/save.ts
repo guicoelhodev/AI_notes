@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro'
-import { updateFile } from '../../lib/github'
+import { updateFile, createFile } from '../../lib/github'
 
 export const prerender = false
 
@@ -14,7 +14,14 @@ export const PUT: APIRoute = async ({ request }) => {
 			})
 		}
 
-		await updateFile(path, content)
+		const url = new URL(request.url)
+		const mode = url.searchParams.get('mode')
+
+		if (mode === 'create') {
+			await createFile(path, content)
+		} else {
+			await updateFile(path, content)
+		}
 
 		return new Response(JSON.stringify({ success: true }), {
 			status: 200,
