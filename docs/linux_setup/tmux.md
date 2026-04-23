@@ -18,12 +18,6 @@ bind-key j select-pane -D
 bind-key k select-pane -U
 bind-key l select-pane -R
 
-set-window-option -g mode-keys vi
-
-#bind Escape copy-mode
-bind-key -T copy-mode-vi v send-keys -X begin-selection
-bind-key -T copy-mode-vi y send-keys -X copy-selection-and-cancel
-
 set-option -g status-position bottom
 
 # List of plugins
@@ -31,12 +25,14 @@ set -g @plugin 'tmux-plugins/tpm'
 set -g @plugin 'tmux-plugins/tmux-sensible'
 set -g @plugin 'catppuccin/tmux'
 set -g @plugin 'christoomey/vim-tmux-navigator'
-set -g @plugin 'tmux-plugins/tmux-sessionist'
+
+# tmux-sessionist
+set -g @plugin 'tmux-plugins/tmux-sessionist' # use prefix + g
 
 # Setup catppuccin 
 set -g @catppuccin_flavour 'mocha'
-set -g @catppuccin_window_left_separator ""
-set -g @catppuccin_window_right_separator " "
+set -g @catppuccin_window_left_separator ""
+set -g @catppuccin_window_right_separator " "
 set -g @catppuccin_window_middle_separator " █"
 set -g @catppuccin_window_number_position "right"
 
@@ -47,16 +43,30 @@ set -g @catppuccin_window_current_fill "number"
 set -g @catppuccin_window_current_text "#W"
 
 set -g @catppuccin_status_modules_right "directory session"
-set -g @catppuccin_status_left_separator  " "
-set -g @catppuccin_status_right_separator ""
+set -g @catppuccin_status_left_separator  " "
+set -g @catppuccin_status_right_separator ""
 set -g @catppuccin_status_right_separator_inverse "no"
 set -g @catppuccin_status_fill "icon"
 set -g @catppuccin_status_connect_separator "no"
 
 set -g @catppuccin_directory_text "#{pane_current_path}"
 
-bind-key -r f run-shell "tmux new ~/.local/scripts/tmux-sessionizer"
-bind-key o choose-session
+bind-key -r f run-shell "tmux neww ~/.local/share/scripts/tmux-sessionizer"
+
+
+# Habilitar modo vi para cópia
+
+bind Escape copy-mode
+
+setw -g mode-keys vi
+
+bind-key -T copy-mode-vi 'v' send -X begin-selection
+bind-key -T copy-mode-vi 'y' send -X copy-selection-and-cancel
+#bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'xclip -in -selection clipboard'
+bind-key -T copy-mode-vi 'y' send -X copy-pipe-and-cancel 'wl-copy'
+
+
+bind o choose-tree -s
 
 # Initialize TMUX plugin manager (keep this line at the very bottom of tmux.conf)
 run '~/.tmux/plugins/tpm/tpm'
