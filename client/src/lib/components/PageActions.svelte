@@ -1,10 +1,14 @@
 <script lang="ts">
 	import { editorState } from '$lib/stores/editor.svelte';
+	import { sidebarState } from '$lib/stores/sidebar.svelte';
 	import Save from '$lib/icons/Save.svelte';
 	import Spinner from '$lib/icons/Spinner.svelte';
 
-	function handleSave() {
-		editorState.save();
+	async function handleSave() {
+		const saved = await editorState.save();
+		if (saved) {
+			await sidebarState.loadTree();
+		}
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
