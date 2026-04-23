@@ -9,8 +9,6 @@
 
 TEST
 
-## AMAZING
-
 ```JavaScript
 console.log('console.log')
 ```
