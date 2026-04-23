@@ -48,19 +48,19 @@
 	>
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
-			class="mx-4 w-full max-w-sm rounded-lg border border-[var(--color-muted)]/30 bg-[var(--color-surface)] p-6 shadow-2xl"
+			class="mx-4 w-full max-w-sm rounded-lg border border-(--color-muted)/30 bg-(--color-surface) p-6 shadow-2xl"
 			onclick={(e) => e.stopPropagation()}
 			onkeydown={() => {}}
 		>
-			<h3 class="mb-2 text-lg font-semibold text-[var(--color-heading)]">Delete Folder</h3>
-			<p class="mb-6 text-sm text-[var(--color-text)]">
+			<h3 class="mb-2 text-lg font-semibold text-(--color-heading)">Delete Folder</h3>
+			<p class="mb-6 text-sm text-(--color-text)">
 				Are you sure you want to delete
 				<span class="font-semibold">"{folderName}"</span> and all its files?
 			</p>
 			<div class="flex justify-end gap-3">
 				<button
 					type="button"
-					class="cursor-pointer rounded px-3 py-1.5 text-sm text-[var(--color-muted)] transition-colors hover:bg-[var(--color-muted)]/10"
+					class="cursor-pointer rounded px-3 py-1.5 text-sm text-(--color-muted) transition-colors hover:bg-(--color-muted)/10"
 					onclick={onCancel}
 				>
 					Cancel

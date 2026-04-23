@@ -206,7 +206,7 @@
 				{#if actions.includes('createFolder')}
 					<button
 						type="button"
-						class="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-left text-sm text-[var(--color-text)] transition-colors hover:bg-[var(--color-muted)]/10"
+						class="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-left text-sm text-(--color-text) transition-colors hover:bg-(--color-muted)/10"
 						onclick={() => startCreate('folder')}
 					>
 						<Folder class="h-4 w-4 shrink-0" />
@@ -216,7 +216,7 @@
 				{#if actions.includes('createFile')}
 					<button
 						type="button"
-						class="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-left text-sm text-[var(--color-text)] transition-colors hover:bg-[var(--color-muted)]/10"
+						class="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-left text-sm text-(--color-text) transition-colors hover:bg-(--color-muted)/10"
 						onclick={() => startCreate('file')}
 					>
 						<File class="h-4 w-4 shrink-0" />
@@ -226,7 +226,7 @@
 				{#if actions.includes('rename')}
 					<button
 						type="button"
-						class="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-left text-sm text-[var(--color-text)] transition-colors hover:bg-[var(--color-muted)]/10"
+						class="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-left text-sm text-(--color-text) transition-colors hover:bg-(--color-muted)/10"
 						onclick={handleRename}
 					>
 						<Edit class="h-4 w-4 shrink-0" />
@@ -236,7 +236,7 @@
 				{#if actions.includes('delete')}
 					<button
 						type="button"
-						class="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-left text-sm text-red-500 transition-colors hover:bg-[var(--color-muted)]/10"
+						class="flex w-full cursor-pointer items-center gap-2 px-3 py-1.5 text-left text-sm text-red-500 transition-colors hover:bg-(--color-muted)/10"
 						onclick={handleDelete}
 					>
 						<Trash class="h-4 w-4 shrink-0" />

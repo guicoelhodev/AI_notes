@@ -57,7 +57,7 @@
 		let last = 0;
 		for (const [start, end] of match.indices) {
 			result += escapeHtml(title.slice(last, start));
-			result += `<mark class="bg-[var(--color-heading)]/30 text-[var(--color-heading)] rounded-sm">${escapeHtml(title.slice(start, end + 1))}</mark>`;
+			result += `<mark class="bg-(--color-heading)/30 text-(--color-heading) rounded-sm">${escapeHtml(title.slice(start, end + 1))}</mark>`;
 			last = end + 1;
 		}
 		result += escapeHtml(title.slice(last));
@@ -96,39 +96,39 @@
 	>
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
-			class="w-full max-w-lg mx-4 rounded-lg border border-[var(--color-muted)]/30 bg-[var(--color-surface)] shadow-2xl overflow-hidden"
+			class="w-full max-w-lg mx-4 rounded-lg border border-(--color-muted)/30 bg-(--color-surface) shadow-2xl overflow-hidden"
 			onclick={(e) => e.stopPropagation()}
 			onkeydown={() => {}}
 		>
 			<!-- Search input -->
-			<div class="flex items-center gap-2 px-4 py-3 border-b border-[var(--color-muted)]/20">
-				<Search class="w-4 h-4 text-[var(--color-muted)] shrink-0" />
+			<div class="flex items-center gap-2 px-4 py-3 border-b border-(--color-muted)/20">
+				<Search class="w-4 h-4 text-(--color-muted) shrink-0" />
 				<input
 					type="text"
 					placeholder="Search notes..."
 					autocomplete="off"
 					spellcheck="false"
-					class="flex-1 bg-transparent outline-none text-[var(--color-text)] placeholder:text-[var(--color-muted)]"
+					class="flex-1 bg-transparent outline-none text-(--color-text) placeholder:text-(--color-muted)"
 					bind:this={inputEl}
 					value={searchState.query}
 					oninput={handleInput}
 					onkeydown={handleKeydown}
 				/>
-				<kbd class="text-xs text-[var(--color-muted)] border border-[var(--color-muted)]/30 rounded px-1.5 py-0.5">ESC</kbd>
+				<kbd class="text-xs text-(--color-muted) border border-(--color-muted)/30 rounded px-1.5 py-0.5">ESC</kbd>
 			</div>
 
 			<!-- Results -->
 			<ul class="max-h-64 overflow-y-auto">
 				{#if searchState.results.length === 0 && searchState.query.trim()}
-					<li class="px-4 py-3 text-sm text-[var(--color-muted)]">No results</li>
+					<li class="px-4 py-3 text-sm text-(--color-muted)">No results</li>
 				{:else}
 					{#each searchState.results as item, i (item.item.id)}
 						<li data-index={i}>
 							<!-- svelte-ignore a11y_no_static_element_interactions -->
 							<a
 								href="/file?path={encodeURIComponent(item.item.id)}.md"
-								class="block px-4 py-2.5 text-sm text-[var(--color-text)] hover:bg-[var(--color-heading)]/10 cursor-pointer transition-colors
-								{searchState.activeIndex === i ? 'bg-[var(--color-heading)]/10' : ''}"
+								class="block px-4 py-2.5 text-sm text-(--color-text) hover:bg-(--color-heading)/10 cursor-pointer transition-colors
+								{searchState.activeIndex === i ? 'bg-(--color-heading)/10' : ''}"
 								onclick={(e) => {
 									e.preventDefault();
 									handleResultClick(item.item);

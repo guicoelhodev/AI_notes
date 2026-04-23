@@ -109,14 +109,14 @@
 	>
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
-			class="mx-4 w-full max-w-sm rounded-lg border border-[var(--color-muted)]/30 bg-[var(--color-surface)] p-6 shadow-2xl"
+			class="mx-4 w-full max-w-sm rounded-lg border border-(--color-muted)/30 bg-(--color-surface) p-6 shadow-2xl"
 			onclick={(e) => e.stopPropagation()}
 			onkeydown={() => {}}
 		>
-			<h3 class="mb-2 text-lg font-semibold text-[var(--color-heading)]">
+			<h3 class="mb-2 text-lg font-semibold text-(--color-heading)">
 				Rename {isFolder ? 'Folder' : 'File'}
 			</h3>
-			<p class="mb-4 text-sm text-[var(--color-text)]">
+			<p class="mb-4 text-sm text-(--color-text)">
 				Enter a new name for <span class="font-semibold">"{displayName}"</span>:
 			</p>
 			<input
@@ -125,7 +125,7 @@
 				value={inputValue}
 				oninput={onInput}
 				disabled={isLoading}
-				class="mb-2 w-full rounded border border-[var(--color-heading)] bg-transparent px-3 py-1.5 text-sm text-[var(--color-text)] outline-none disabled:opacity-50"
+				class="mb-2 w-full rounded border border-(--color-heading) bg-transparent px-3 py-1.5 text-sm text-(--color-text) outline-none disabled:opacity-50"
 			/>
 			{#if error}
 				<p class="mb-4 text-xs text-red-500">{error}</p>
@@ -137,7 +137,7 @@
 			<div class="flex justify-end gap-3">
 				<button
 					type="button"
-					class="cursor-pointer rounded px-3 py-1.5 text-sm text-[var(--color-muted)] transition-colors hover:bg-[var(--color-muted)]/10"
+					class="cursor-pointer rounded px-3 py-1.5 text-sm text-(--color-muted) transition-colors hover:bg-(--color-muted)/10"
 					onclick={onCancel}
 					disabled={isLoading}
 				>
@@ -145,7 +145,7 @@
 				</button>
 				<button
 					type="button"
-					class="flex cursor-pointer items-center gap-2 rounded border border-[var(--color-heading)] px-3 py-1.5 text-sm text-[var(--color-heading)] transition-colors hover:bg-[var(--color-heading)]/10 disabled:cursor-not-allowed disabled:opacity-50"
+					class="flex cursor-pointer items-center gap-2 rounded border border-(--color-heading) px-3 py-1.5 text-sm text-(--color-heading) transition-colors hover:bg-(--color-heading)/10 disabled:cursor-not-allowed disabled:opacity-50"
 					disabled={!isValid || isLoading}
 					onclick={handleRename}
 				>
