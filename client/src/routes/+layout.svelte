@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import './layout.css';
 	import Sidebar from '$lib/components/Sidebar.svelte';
 	import ThemeToggle from '$lib/components/ThemeToggle.svelte';
@@ -8,8 +9,13 @@
 	import Menu from '$lib/icons/Menu.svelte';
 	import { sidebarState } from '$lib/stores/sidebar.svelte';
 	import { searchState } from '$lib/stores/search.svelte';
+	import { themeState } from '$lib/stores/theme.svelte';
 
 	let { children } = $props();
+
+	onMount(() => {
+		themeState.sync();
+	});
 </script>
 
 <div class="flex h-screen w-full">

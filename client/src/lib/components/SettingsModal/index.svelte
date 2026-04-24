@@ -16,7 +16,15 @@
 	function handleOverlayClick() {
 		onClose();
 	}
+
+	function handleKeydown(e: KeyboardEvent) {
+		if (e.key === 'Escape') {
+			onClose();
+		}
+	}
 </script>
+
+<svelte:window onkeydown={handleKeydown} />
 
 {#if isOpen}
 	<!-- svelte-ignore a11y_no_static_element_interactions -->

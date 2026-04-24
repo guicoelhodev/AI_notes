@@ -2,22 +2,94 @@
 @plugin '@tailwindcss/typography';
 @import "@milkdown/crepe/theme/common/style.css";
 
-:root {
-	--color-base: #0f1117;
-	--color-surface: #1a1b26;
-	--color-text: #c0caf5;
+[data-theme="catpuccin-dark"] {
+	--color-base: #24273a;
+	--color-surface: #363a4f;
+	--color-text: #cad3f5;
+	--color-heading: #c6a0f6;
+	--color-link: #8aadf4;
+	--color-muted: #6e738d;
+}
+
+[data-theme="catpuccin-light"] {
+	--color-base: #eff1f5;
+	--color-surface: #dcdee5;
+	--color-text: #4c4f69;
+	--color-heading: #8839ef;
+	--color-link: #7287fd;
+	--color-muted: #6c7086;
+}
+
+[data-theme="tokyo-night-dark"] {
+	--color-base: #1a1b26;
+	--color-surface: #24283b;
+	--color-text: #a9b1d6;
 	--color-heading: #7aa2f7;
-	--color-link: #bb9af7;
+	--color-link: #7aa2f7;
 	--color-muted: #565f89;
 }
 
-.light {
-	--color-base: #f8f9fc;
-	--color-surface: #e8eaf0;
-	--color-text: #1e2030;
-	--color-heading: #3b5998;
-	--color-link: #7c3aed;
+[data-theme="tokyo-night-light"] {
+	--color-base: #e4e7eb;
+	--color-surface: #d3d8e0;
+	--color-text: #343a4d;
+	--color-heading: #4c7aef;
+	--color-link: #4c7aef;
 	--color-muted: #6b7280;
+}
+
+[data-theme="gruvbox-dark"] {
+	--color-base: #282828;
+	--color-surface: #3c3836;
+	--color-text: #ebdbb2;
+	--color-heading: #fb4934;
+	--color-link: #f2e9de;
+	--color-muted: #928374;
+}
+
+[data-theme="gruvbox-light"] {
+	--color-base: #f2e9de;
+	--color-surface: #ebdbb2;
+	--color-text: #3c3836;
+	--color-heading: #cc241d;
+	--color-link: #282828;
+	--color-muted: #928374;
+}
+
+[data-theme="solarized-dark"] {
+	--color-base: #002b36;
+	--color-surface: #073642;
+	--color-text: #839496;
+	--color-heading: #268bd2;
+	--color-link: #268bd2;
+	--color-muted: #586e75;
+}
+
+[data-theme="solarized-light"] {
+	--color-base: #fdf6e3;
+	--color-surface: #eee8d5;
+	--color-text: #657b83;
+	--color-heading: #268bd2;
+	--color-link: #268bd2;
+	--color-muted: #93a1a1;
+}
+
+[data-theme="rose-pine-dark"] {
+	--color-base: #232136;
+	--color-surface: #2a273f;
+	--color-text: #e0def4;
+	--color-heading: #c4a7e7;
+	--color-link: #9ccfd8;
+	--color-muted: #6e6a86;
+}
+
+[data-theme="rose-pine-light"] {
+	--color-base: #faf4ed;
+	--color-surface: #f2e9de;
+	--color-text: #575279;
+	--color-heading: #b4637a;
+	--color-link: #56949f;
+	--color-muted: #908ca0;
 }
 
 * {
@@ -267,7 +339,7 @@ body {
 	}
 }
 
-.light .milkdown {
+[data-theme$="-light"] .milkdown {
 	--crepe-color-hover: color-mix(in srgb, var(--color-surface) 80%, var(--color-text) 10%);
 	--crepe-color-selected: color-mix(in srgb, var(--color-heading) 20%, var(--color-surface) 80%);
 	--crepe-shadow-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px 0px rgba(0, 0, 0, 0.06);

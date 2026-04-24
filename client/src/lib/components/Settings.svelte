@@ -1,8 +1,8 @@
 <script lang="ts">
 	import Gear from '$lib/icons/Gear.svelte';
-	import SettingsModal from './SettingsModal.svelte';
+	import SettingsModal from './SettingsModal/index.svelte';
 
-	let isOpen = $state(false);
+	let isOpen = $state(true);
 
 	function openModal() {
 		isOpen = true;
