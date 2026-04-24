@@ -205,3 +205,37 @@ export async function uploadImage(file: File): Promise<string> {
 
 	return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/master/${path}`;
 }
+
+export async function deleteImage(imageUrl: string): Promise<void> {
+	const path = `.github/images/${imageUrl.split('/').pop()}`;
+
+	const res = await fetch(
+		`${GITHUB_API}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`,
+		{ headers: headers() }
+	);
+
+	if (!res.ok) {
+		throw { status: res.status, message: `Image not found: ${path}` };
+	}
+
+	const data = await res.json();
+	const sha = data.sha;
+
+	const deleteRes = await fetch(
+		`${GITHUB_API}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`,
+		{
+			method: 'DELETE',
+			headers: headers(),
+			body: JSON.stringify({
+				message: `images: delete ${path}`,
+				sha,
+				branch: 'master'
+			})
+		}
+	);
+
+	if (!deleteRes.ok) {
+		const error = await deleteRes.json();
+		throw { status: deleteRes.status, message: error.message || 'Failed to delete image' };
+	}
+}
