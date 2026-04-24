@@ -3,6 +3,7 @@
 	import { sidebarState } from '$lib/stores/sidebar.svelte';
 	import SidebarNode from './SidebarNode.svelte';
 	import FileActions from './FileActions.svelte';
+	import Settings from './Settings.svelte';
 	import type { TreeNode } from '$lib/types';
 
 	const homeNode: TreeNode = { label: '', children: sidebarState.tree };
@@ -79,4 +80,5 @@
 			</ul>
 		{/if}
 	</div>
+	<Settings />
 </nav>
