@@ -173,4 +173,35 @@ export async function createFile(path: string, content: string): Promise<void> {
 	}
 }
 
+export async function uploadImage(file: File): Promise<string> {
 
+	const timestamp = Date.now().toString(16);
+	const randomPart = Math.random().toString(16).substring(2, 10);
+	const hash = `${timestamp}_${randomPart}`;
+
+	const extension = file.name.split('.').pop() || 'png';
+	const filename = `img_${hash}.${extension}`;
+	const path = `.github/images/${filename}`;
+
+	const arrayBuffer = await file.arrayBuffer();
+	const binaryString = Array.from(new Uint8Array(arrayBuffer))
+		.map((byte) => String.fromCharCode(byte))
+		.join('');
+	const base64Content = btoa(binaryString);
+
+	const res = await fetch(`${GITHUB_API}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/${path}`, {
+		method: 'PUT',
+		headers: headers(),
+		body: JSON.stringify({
+			message: `images: upload ${filename}`,
+			content: base64Content,
+			branch: 'master'
+		})
+	});
+
+	if (!res.ok) {
+		throw { status: res.status, message: 'Upload failed' };
+	}
+
+	return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/master/${path}`;
+}

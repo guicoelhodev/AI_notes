@@ -2,7 +2,7 @@
 	import Gear from '$lib/icons/Gear.svelte';
 	import SettingsModal from './SettingsModal/index.svelte';
 
-	let isOpen = $state(true);
+	let isOpen = $state(false);
 
 	function openModal() {
 		isOpen = true;

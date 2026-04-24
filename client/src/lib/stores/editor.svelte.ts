@@ -38,26 +38,30 @@ class EditorState {
 			return false;
 		}
 		this.isSaving = true;
-		try {
-			const url = this.mode === 'create' ? `/api/save?mode=create` : `/api/save`;
-			const res = await fetch(url, {
-				method: 'PUT',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify({ path: this.path, content: this.currentContent })
-			});
-			if (!res.ok) {
-				const data = await res.json();
-				throw new Error(data.error || 'Failed to save');
-			}
-			this.markSaved();
-			this.triggerToast('Saved successfully', 'success');
-			return true;
-		} catch (error: any) {
-			this.triggerToast(error.message || 'Failed to save', 'error');
-			return false;
-		} finally {
-			this.isSaving = false;
-		}
+		console.log('ORIGINAL:', this.originalContent);
+		console.log('NEW:', this.currentContent);
+
+		return true;
+		//	try {
+		//		const url = this.mode === 'create' ? `/api/save?mode=create` : `/api/save`;
+		//		const res = await fetch(url, {
+		//			method: 'PUT',
+		//			headers: { 'Content-Type': 'application/json' },
+		//			body: JSON.stringify({ path: this.path, content: this.currentContent })
+		//		});
+		//		if (!res.ok) {
+		//			const data = await res.json();
+		//			throw new Error(data.error || 'Failed to save');
+		//		}
+		//		this.markSaved();
+		//		this.triggerToast('Saved successfully', 'success');
+		//		return true;
+		//	} catch (error: any) {
+		//		this.triggerToast(error.message || 'Failed to save', 'error');
+		//		return false;
+		//	} finally {
+		//		this.isSaving = false;
+		//	}
 	}
 
 	triggerToast(message: string, type: 'success' | 'error') {
