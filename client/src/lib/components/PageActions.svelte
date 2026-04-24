@@ -2,13 +2,24 @@
 	import { editorState } from '$lib/stores/editor.svelte';
 	import { sidebarState } from '$lib/stores/sidebar.svelte';
 	import Save from '$lib/icons/Save.svelte';
+	import CopyContext from '$lib/icons/CopyContext.svelte';
 	import Spinner from '$lib/icons/Spinner.svelte';
+
+	let isCopied = $state(false);
 
 	async function handleSave() {
 		const saved = await editorState.save();
 		if (saved) {
 			await sidebarState.loadTree();
 		}
+	}
+
+	async function handleCopyContext() {
+		await navigator.clipboard.writeText(editorState.currentContent);
+		isCopied = true;
+		setTimeout(() => {
+			isCopied = false;
+		}, 1000);
 	}
 
 	function handleKeydown(e: KeyboardEvent) {
@@ -26,18 +37,34 @@
 		{editorState.path || 'No file selected'}
 	</h1>
 
-	<button
-		type="button"
-		aria-label="Save"
-		class="flex items-center gap-2 p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-muted) disabled:opacity-50 disabled:cursor-not-allowed"
-		disabled={editorState.isSaving}
-		onclick={handleSave}
-	>
-		{#if editorState.isSaving}
-			<Spinner class="w-4 h-4 animate-spin" />
-		{:else}
-			<Save class="w-4 h-4" />
-		{/if}
-		<kbd class="text-xs border border-(--color-muted)/40 rounded px-1.5 py-0.5 hidden sm:inline">Ctrl+S</kbd>
-	</button>
+	<div class="flex items-center gap-2">
+		<button
+			type="button"
+			aria-label="Copy context"
+			class="flex items-center gap-2 p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-muted) min-w-[120px]"
+			onclick={handleCopyContext}
+		>
+			<CopyContext class="w-4 h-4" />
+			{#if isCopied}
+				<span class="text-sm text-(--color-heading)">Copied to clipboard!</span>
+			{:else}
+				<span class="text-sm">Copy context</span>
+			{/if}
+		</button>
+
+		<button
+			type="button"
+			aria-label="Save"
+			class="flex items-center gap-2 p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-muted) disabled:opacity-50 disabled:cursor-not-allowed"
+			disabled={editorState.isSaving}
+			onclick={handleSave}
+		>
+			{#if editorState.isSaving}
+				<Spinner class="w-4 h-4 animate-spin" />
+			{:else}
+				<Save class="w-4 h-4" />
+			{/if}
+			<kbd class="text-xs border border-(--color-muted)/40 rounded px-1.5 py-0.5 hidden sm:inline">Ctrl+S</kbd>
+		</button>
+	</div>
 </div>
