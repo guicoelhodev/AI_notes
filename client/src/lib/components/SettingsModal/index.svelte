@@ -35,7 +35,7 @@
 	>
 		<!-- svelte-ignore a11y_no_static_element_interactions -->
 		<div
-			class="w-full max-w-2xl mx-4 rounded-lg border border-(--color-muted)/30 bg-(--color-surface) shadow-2xl overflow-hidden flex"
+			class="w-full max-w-2xl mx-4 rounded-lg border border-(--color-muted)/30 bg-(--color-surface) shadow-2xl overflow-hidden flex min-h-80"
 			onclick={(e) => e.stopPropagation()}
 			onkeydown={() => {}}
 		>

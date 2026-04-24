@@ -277,6 +277,26 @@ body {
 	overflow-x: auto;
 }
 
+.copy-button {
+	background: var(--color-surface) !important;
+	color: var(--color-text) !important;
+	border: 1px solid var(--color-muted) !important;
+}
+
+.copy-button .milkdown-icon {
+	color: var(--color-muted) !important;
+}
+
+.milkdown .ProseMirror pre .copy-button {
+	background: var(--color-surface) !important;
+	color: var(--color-text) !important;
+	border: 1px solid var(--color-muted) !important;
+}
+
+.milkdown .copy-button .milkdown-icon {
+	color: var(--color-muted) !important;
+}
+
 .milkdown .ProseMirror pre code {
 	background: none;
 	padding: 0;
@@ -311,6 +331,10 @@ body {
 .milkdown .ProseMirror th {
 	font-weight: 700;
 	background: var(--color-surface);
+}
+
+.milkdown .ProseMirror p {
+	margin: 0;
 }
 
 .milkdown .ProseMirror {

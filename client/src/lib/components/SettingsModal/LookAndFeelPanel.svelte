@@ -5,8 +5,8 @@
 	import ThemeSelector from './ThemeSelector.svelte';
 
 	const themes: { id: ThemeName; label: string; color: string }[] = [
-		{ id: 'catpuccin', label: 'Catpuccin', color: '#c6a0f6' },
 		{ id: 'tokyo-night', label: 'Tokyo Night', color: '#7aa2f7' },
+		{ id: 'catpuccin', label: 'Catpuccin', color: '#c6a0f6' },
 		{ id: 'gruvbox', label: 'Gruvbox', color: '#fb4934' },
 		{ id: 'solarized', label: 'Solarized', color: '#268bd2' },
 		{ id: 'rose-pine', label: 'Rose Pine', color: '#c4a7e7' }
@@ -19,9 +19,9 @@
 </script>
 
 <div>
-	<h3 class="text-base font-semibold text-(--color-text) mb-4">Look and Feel</h3>
+	<h3 class="mb-4 text-base font-semibold text-(--color-text)">Look and Feel</h3>
 
-	<div class="flex items-center justify-between py-3 border-b border-(--color-muted)/20">
+	<div class="flex items-center justify-between border-b border-(--color-muted)/20 py-3">
 		<div>
 			<span class="text-sm font-medium text-(--color-text)">Theme</span>
 			<p class="text-xs text-(--color-muted)">Choose your preferred color palette</p>
@@ -37,3 +37,4 @@
 		<ThemeToggle />
 	</div>
 </div>
+
