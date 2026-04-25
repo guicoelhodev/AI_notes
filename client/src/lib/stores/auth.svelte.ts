@@ -38,7 +38,6 @@ class AuthState {
 		const data = await res.json();
 		this.user = data.user;
 		this.status = 'authorized';
-		console.log('Logged in as:', this.user?.login);
 	}
 }
 
