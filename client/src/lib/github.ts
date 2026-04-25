@@ -1,6 +1,39 @@
 import { GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO } from '$env/static/private';
 import type { TreeEntry } from './types';
 
+export interface GithubUser {
+	login: string;
+	avatar_url: string;
+	name: string | null;
+	bio: string | null;
+}
+
+export async function exchangeCodeForToken(
+	code: string,
+	clientId: string,
+	clientSecret: string
+): Promise<string> {
+	const res = await fetch('https://github.com/login/oauth/access_token', {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+		body: JSON.stringify({ client_id: clientId, client_secret: clientSecret, code })
+	});
+	const data = await res.json();
+	if (data.error) throw new Error(data.error);
+	return data.access_token;
+}
+
+export async function getGithubUser(token: string): Promise<GithubUser> {
+	const res = await fetch('https://api.github.com/user', {
+		headers: {
+			Authorization: `Bearer ${token}`,
+			Accept: 'application/vnd.github+json'
+		}
+	});
+	if (!res.ok) throw new Error('Failed to fetch user');
+	return res.json();
+}
+
 const GITHUB_API = 'https://api.github.com';
 const API_VERSION = '2026-03-10';
 
