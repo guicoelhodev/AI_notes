@@ -1,6 +1,17 @@
 import { GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO } from '$env/static/private';
 import type { TreeEntry } from './types';
 
+const GITHUB_API = 'https://api.github.com';
+const API_VERSION = '2022-11-28';
+
+function headers(): HeadersInit {
+	return {
+		Authorization: `Bearer ${GITHUB_TOKEN}`,
+		Accept: 'application/vnd.github+json',
+		'X-GitHub-Api-Version': API_VERSION
+	};
+}
+
 export async function getFile(path: string): Promise<string> {
 	const res = await fetch(
 		`${GITHUB_API}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/contents/docs/${path}`,
