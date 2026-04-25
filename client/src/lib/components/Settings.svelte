@@ -1,7 +1,6 @@
 <script lang="ts">
 	import Gear from '$lib/icons/Gear.svelte';
 	import SettingsModal from './SettingsModal/index.svelte';
-	import { authState } from '$lib/stores/auth.svelte';
 
 	let isOpen = $state(false);
 
@@ -16,12 +15,8 @@
 
 <div class="mt-auto flex items-center justify-between border-t border-(--color-border) pt-4">
 	<div class="flex flex-col items-start">
-		<span class="text-sm font-medium text-(--color-text)">
-			{authState.username ?? 'Unknown'}
-		</span>
-		<span class="text-xs text-(--color-muted)">
-			{authState.isAuthorized ? 'Signed' : 'not signed'}
-		</span>
+		<span class="text-sm font-medium text-(--color-text)">Local Mode</span>
+		<span class="text-xs text-(--color-muted)">Read only</span>
 	</div>
 
 	<button

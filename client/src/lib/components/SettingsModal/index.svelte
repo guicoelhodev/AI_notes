@@ -1,16 +1,13 @@
 <script lang="ts">
 	import Palette from '$lib/icons/Palette.svelte';
-	import Github from '$lib/icons/Github.svelte';
 	import LookAndFeelPanel from './LookAndFeelPanel.svelte';
-	import GithubLoginPanel from './GithubLoginPanel.svelte';
 
 	let { isOpen = $bindable(false), onClose }: { isOpen?: boolean; onClose: () => void } = $props();
 
 	let activeTab = $state('look-and-feel');
 
 	const tabs = [
-		{ id: 'look-and-feel', label: 'Look and Feel', icon: Palette, component: LookAndFeelPanel },
-		{ id: 'github-login', label: 'Github login', icon: Github, component: GithubLoginPanel }
+		{ id: 'look-and-feel', label: 'Look and Feel', icon: Palette, component: LookAndFeelPanel }
 	];
 
 	function handleOverlayClick() {
@@ -62,8 +59,6 @@
 			<div class="flex-1 p-6">
 				{#if activeTab === 'look-and-feel'}
 					<LookAndFeelPanel />
-				{:else if activeTab === 'github-login'}
-					<GithubLoginPanel />
 				{/if}
 			</div>
 		</div>
