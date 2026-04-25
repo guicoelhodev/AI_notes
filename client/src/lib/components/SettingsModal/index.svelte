@@ -1,13 +1,16 @@
 <script lang="ts">
 	import Palette from '$lib/icons/Palette.svelte';
+	import ProjectDetails from '$lib/icons/ProjectDetails.svelte';
 	import LookAndFeelPanel from './LookAndFeelPanel.svelte';
+	import ProjectDetailsPanel from './ProjectDetailsPanel.svelte';
 
 	let { isOpen = $bindable(false), onClose }: { isOpen?: boolean; onClose: () => void } = $props();
 
 	let activeTab = $state('look-and-feel');
 
 	const tabs = [
-		{ id: 'look-and-feel', label: 'Look and Feel', icon: Palette, component: LookAndFeelPanel }
+		{ id: 'look-and-feel', label: 'Look and Feel', icon: Palette, component: LookAndFeelPanel },
+		{ id: 'project-details', label: 'Project Details', icon: ProjectDetails, component: ProjectDetailsPanel }
 	];
 
 	function handleOverlayClick() {
@@ -59,6 +62,8 @@
 			<div class="flex-1 p-6">
 				{#if activeTab === 'look-and-feel'}
 					<LookAndFeelPanel />
+				{:else if activeTab === 'project-details'}
+					<ProjectDetailsPanel />
 				{/if}
 			</div>
 		</div>
