@@ -6,13 +6,10 @@ declare global {
 			GITHUB_TOKEN: string;
 			GITHUB_OWNER: string;
 			GITHUB_REPO: string;
+			GITHUB_CLIENT_ID: string;
+			GITHUB_CLIENT_SECRET: string;
 		}
-		// interface Error {}
-		// interface Locals {}
-		// interface PageData {}
-		// interface PageState {}
-		// interface Platform {}
 	}
 }
 
-export {};
+export { };
