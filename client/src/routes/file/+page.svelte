@@ -7,6 +7,7 @@
 	import { Selection } from 'prosemirror-state';
 	import { Crepe } from '@milkdown/crepe';
 	import PageActions from '$lib/components/PageActions.svelte';
+	import { PUBLIC_READ_ONLY } from '$env/static/public';
 
 	let editorEl: HTMLDivElement | undefined = $state();
 	let loading = $state(true);
@@ -22,7 +23,8 @@
 
 		if (currentPath && currentMode !== 'create') {
 			try {
-				const res = await fetch(`/api/docs/${encodeURIComponent(currentPath)}`);
+				const apiBase = PUBLIC_READ_ONLY ? '/api/local-docs' : '/api/docs';
+				const res = await fetch(`${apiBase}/${encodeURIComponent(currentPath)}`);
 				if (!res.ok) throw new Error('File not found');
 				const content = await res.text();
 				editorState.setContent(content);
