@@ -10,15 +10,15 @@
 	{:else if authState.isAuthorized}
 		<div class="flex items-center justify-between border-b border-(--color-muted)/20 py-3">
 			<div>
-				<span class="text-sm font-medium text-(--color-text)">Account</span>
+				<span class="text-sm font-medium text-(--color-text)">{authState.user?.name}</span>
 				<p class="text-xs text-(--color-muted)">@{authState.username}</p>
 			</div>
 			<button
-					onclick={() => authState.logout()}
-					class="px-3 py-1.5 text-xs hover:underline text-(--color-muted)"
-				>
-					Logout
-				</button>
+				onclick={() => authState.logout()}
+				class="px-3 py-1.5 text-xs text-(--color-muted) hover:underline"
+			>
+				Logout
+			</button>
 		</div>
 	{:else}
 		<div class="flex items-center justify-between border-b border-(--color-muted)/20 py-3">
@@ -28,10 +28,15 @@
 			</div>
 			<button
 				onclick={() => authState.login()}
-				class="px-4 py-2 bg-[#238636] text-white rounded text-sm font-medium hover:bg-[#2ea043]"
+				class="rounded bg-[#238636] px-4 py-2 text-xs font-medium text-white hover:bg-[#2ea043]"
 			>
 				Login with GitHub
 			</button>
 		</div>
+		<p class="mt-3 text-xs text-(--color-muted)">
+			Only connect if you have configured this project, as this is used to release editing
+			features. <a href="#" class="hover:underline text-(--color-heading)">Learn more here.</a>
+		</p>
 	{/if}
 </div>
+
