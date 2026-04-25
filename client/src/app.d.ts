@@ -6,6 +6,7 @@ declare global {
 			GITHUB_TOKEN: string;
 			GITHUB_OWNER: string;
 			GITHUB_REPO: string;
+			GITHUB_BRANCH: string;
 		}
 	}
 }

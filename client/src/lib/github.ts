@@ -1,4 +1,4 @@
-import { GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO } from '$env/static/private';
+import { GITHUB_TOKEN, GITHUB_OWNER, GITHUB_REPO, GITHUB_BRANCH } from '$env/static/private';
 import type { TreeEntry } from './types';
 
 const GITHUB_API = 'https://api.github.com';
@@ -32,7 +32,7 @@ export async function getFile(path: string): Promise<string> {
 
 export async function listDocsTree(): Promise<TreeEntry[]> {
 	const res = await fetch(
-		`${GITHUB_API}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/trees/master:docs?recursive=1`,
+		`${GITHUB_API}/repos/${GITHUB_OWNER}/${GITHUB_REPO}/git/trees/${GITHUB_BRANCH}:docs?recursive=1`,
 		{ headers: headers() }
 	);
 
@@ -76,7 +76,7 @@ export async function updateFile(path: string, content: string): Promise<void> {
 				message: `docs: update ${path}`,
 				content: base64Content,
 				sha,
-				branch: 'master'
+				branch: GITHUB_BRANCH
 			})
 		}
 	);
@@ -108,7 +108,7 @@ export async function deleteFile(path: string): Promise<void> {
 			body: JSON.stringify({
 				message: `docs: delete ${path}`,
 				sha,
-				branch: 'master'
+				branch: GITHUB_BRANCH
 			})
 		}
 	);
@@ -162,7 +162,7 @@ export async function createFile(path: string, content: string): Promise<void> {
 			body: JSON.stringify({
 				message: `docs: create ${path}`,
 				content: base64Content,
-				branch: 'master'
+				branch: GITHUB_BRANCH
 			})
 		}
 	);
@@ -195,7 +195,7 @@ export async function uploadImage(file: File): Promise<string> {
 		body: JSON.stringify({
 			message: `images: upload ${filename}`,
 			content: base64Content,
-			branch: 'master'
+			branch: GITHUB_BRANCH
 		})
 	});
 
@@ -203,7 +203,7 @@ export async function uploadImage(file: File): Promise<string> {
 		throw { status: res.status, message: 'Upload failed' };
 	}
 
-	return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/master/${path}`;
+	return `https://raw.githubusercontent.com/${GITHUB_OWNER}/${GITHUB_REPO}/${GITHUB_BRANCH}/${path}`;
 }
 
 export async function deleteImage(imageUrl: string): Promise<void> {
@@ -229,7 +229,7 @@ export async function deleteImage(imageUrl: string): Promise<void> {
 			body: JSON.stringify({
 				message: `images: delete ${path}`,
 				sha,
-				branch: 'master'
+				branch: GITHUB_BRANCH
 			})
 		}
 	);
