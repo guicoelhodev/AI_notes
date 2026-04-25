@@ -7,13 +7,15 @@
 	import { Selection } from 'prosemirror-state';
 	import { Crepe } from '@milkdown/crepe';
 	import PageActions from '$lib/components/PageActions.svelte';
-	import { PUBLIC_READ_ONLY } from '$env/static/public';
+	//import { PUBLIC_READ_ONLY } from '$env/static/public';
 
 	let editorEl: HTMLDivElement | undefined = $state();
 	let loading = $state(true);
 	let editorInstance: any = null;
 
-	const currentPath = $derived(page.url.searchParams.get('path') ? decodeURIComponent(page.url.searchParams.get('path')!) : '');
+	const currentPath = $derived(
+		page.url.searchParams.get('path') ? decodeURIComponent(page.url.searchParams.get('path')!) : ''
+	);
 	const currentMode = $derived(page.url.searchParams.get('mode') || '');
 
 	async function loadContent() {
@@ -23,7 +25,10 @@
 
 		if (currentPath && currentMode !== 'create') {
 			try {
+				const PUBLIC_READ_ONLY = true;
 				const apiBase = PUBLIC_READ_ONLY ? '/api/local-docs' : '/api/docs';
+				console.log('apiBase', apiBase, PUBLIC_READ_ONLY);
+
 				const res = await fetch(`${apiBase}/${encodeURIComponent(currentPath)}`);
 				if (!res.ok) throw new Error('File not found');
 				const content = await res.text();
@@ -36,9 +41,7 @@
 			}
 		} else if (currentPath && currentMode === 'create') {
 			const fileName = currentPath.replace(/^.*\//, '').replace(/\.md$/, '');
-			const formattedName = fileName
-				.replace(/[-_]/g, ' ')
-				.replace(/\b\w/g, (c) => c.toUpperCase());
+			const formattedName = fileName.replace(/[-_]/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
 			const content = '# ' + formattedName + '\n\n<br />\n\n';
 			editorState.setContent(content);
 			editorState.setOriginalContent('');
@@ -87,11 +90,7 @@
 					const view = ctx.get(editorViewCtx);
 					view.focus();
 					const endPos = view.state.doc.content.size;
-					view.dispatch(
-						view.state.tr.setSelection(
-							Selection.near(view.state.doc.resolve(endPos))
-						)
-					);
+					view.dispatch(view.state.tr.setSelection(Selection.near(view.state.doc.resolve(endPos))));
 				});
 			});
 		}
@@ -139,14 +138,14 @@
 	});
 </script>
 
-<div class="h-full flex flex-col justify-between min-w-0">
-	<div class="flex-1 min-h-0 min-w-0 overflow-x-hidden overflow-y-auto">
+<div class="flex h-full min-w-0 flex-col justify-between">
+	<div class="min-h-0 min-w-0 flex-1 overflow-x-hidden overflow-y-auto">
 		{#if loading}
-			<div class="flex items-center justify-center h-full">
+			<div class="flex h-full items-center justify-center">
 				<p class="text-(--color-muted)">Loading...</p>
 			</div>
 		{:else}
-			<div id="editor" class="h-full min-w-0 w-full" bind:this={editorEl}></div>
+			<div id="editor" class="h-full w-full min-w-0" bind:this={editorEl}></div>
 		{/if}
 	</div>
 	<PageActions />
