@@ -1,0 +1,3884 @@
+{
+  "directed": false,
+  "multigraph": false,
+  "graph": {
+    "hyperedges": [
+      {
+        "id": "github_crud_operations",
+        "label": "GitHub CRUD Operations",
+        "nodes": [
+          "getfile",
+          "updatefile",
+          "createfile",
+          "deletefile"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "client/src/lib/github.ts"
+      },
+      {
+        "id": "file_management_workflow",
+        "label": "File Management Workflow",
+        "nodes": [
+          "api_save",
+          "api_delete",
+          "api_rename",
+          "api_docs"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.9,
+        "source_file": "client/src/routes/api"
+      },
+      {
+        "id": "sidebar_file_tree",
+        "label": "Sidebar File Tree System",
+        "nodes": [
+          "sidebar_state",
+          "treenode",
+          "treeentry",
+          "sidebar_node_component",
+          "sidebar_component"
+        ],
+        "relation": "participate_in",
+        "confidence": "EXTRACTED",
+        "confidence_score": 0.85,
+        "source_file": "client/src/lib/components"
+      },
+      {
+        "id": "physics_layered_architecture",
+        "label": "Physics Layered Architecture",
+        "nodes": [
+          "world_component",
+          "rigidbody_component",
+          "collider_component",
+          "t_component"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "docs/threlte/rapier_guide.md"
+      },
+      {
+        "id": "input_abstraction_layer",
+        "label": "Input Abstraction Layer",
+        "nodes": [
+          "useKeyboard_hook",
+          "useGamepad_hook",
+          "useInputMap_hook"
+        ],
+        "relation": "form",
+        "confidence": "EXTRACTED",
+        "confidence_score": 1.0,
+        "source_file": "docs/threlte/extras/interaction.md"
+      },
+      {
+        "id": "visual_edge_effects",
+        "label": "Visual Edge Effects",
+        "nodes": [
+          "edges_component",
+          "wireframe_component",
+          "outlines_component"
+        ],
+        "relation": "form",
+        "confidence": "INFERRED",
+        "confidence_score": 0.8,
+        "source_file": "docs/threlte/extras/visual_effects.md"
+      }
+    ]
+  },
+  "nodes": [
+    {
+      "label": "svelte.config.js",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/svelte.config.js",
+      "source_location": "L1",
+      "id": "svelte_config_js",
+      "community": 20,
+      "norm_label": "svelte.config.js"
+    },
+    {
+      "label": "eslint.config.js",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/eslint.config.js",
+      "source_location": "L1",
+      "id": "eslint_config_js",
+      "community": 21,
+      "norm_label": "eslint.config.js"
+    },
+    {
+      "label": "vite.config.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/vite.config.ts",
+      "source_location": "L1",
+      "id": "vite_config_ts",
+      "community": 22,
+      "norm_label": "vite.config.ts"
+    },
+    {
+      "label": "app.d.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/app.d.ts",
+      "source_location": "L1",
+      "id": "src_app_d_ts",
+      "community": 23,
+      "norm_label": "app.d.ts"
+    },
+    {
+      "label": "+layout.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/+layout.svelte",
+      "source_location": "L1",
+      "id": "src_routes_layout_svelte",
+      "community": 24,
+      "norm_label": "+layout.svelte"
+    },
+    {
+      "label": "+page.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/+page.svelte",
+      "source_location": "L1",
+      "id": "src_routes_page_svelte",
+      "community": 25,
+      "norm_label": "+page.svelte"
+    },
+    {
+      "label": "+server.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/deleteImages/+server.ts",
+      "source_location": "L1",
+      "id": "src_routes_api_deleteimages_server_ts",
+      "community": 0,
+      "norm_label": "+server.ts"
+    },
+    {
+      "label": "DELETE()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/delete/+server.ts",
+      "source_location": "L4",
+      "id": "server_delete",
+      "community": 0,
+      "norm_label": "delete()"
+    },
+    {
+      "label": "+server.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/rename/+server.ts",
+      "source_location": "L1",
+      "id": "src_routes_api_rename_server_ts",
+      "community": 0,
+      "norm_label": "+server.ts"
+    },
+    {
+      "label": "PUT()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/save/+server.ts",
+      "source_location": "L4",
+      "id": "server_put",
+      "community": 0,
+      "norm_label": "put()"
+    },
+    {
+      "label": "+server.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/delete/+server.ts",
+      "source_location": "L1",
+      "id": "src_routes_api_delete_server_ts",
+      "community": 0,
+      "norm_label": "+server.ts"
+    },
+    {
+      "label": "+server.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/save/+server.ts",
+      "source_location": "L1",
+      "id": "src_routes_api_save_server_ts",
+      "community": 0,
+      "norm_label": "+server.ts"
+    },
+    {
+      "label": "+server.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/upload/+server.ts",
+      "source_location": "L1",
+      "id": "src_routes_api_upload_server_ts",
+      "community": 0,
+      "norm_label": "+server.ts"
+    },
+    {
+      "label": "POST()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/upload/+server.ts",
+      "source_location": "L5",
+      "id": "server_post",
+      "community": 0,
+      "norm_label": "post()"
+    },
+    {
+      "label": "+server.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/docs/[...path]/+server.ts",
+      "source_location": "L1",
+      "id": "src_routes_api_docs_path_server_ts",
+      "community": 0,
+      "norm_label": "+server.ts"
+    },
+    {
+      "label": "GET()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/docs/[...path]/+server.ts",
+      "source_location": "L3",
+      "id": "server_get",
+      "community": 0,
+      "norm_label": "get()"
+    },
+    {
+      "label": "+page.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/file/+page.svelte",
+      "source_location": "L1",
+      "id": "src_routes_file_page_svelte",
+      "community": 26,
+      "norm_label": "+page.svelte"
+    },
+    {
+      "label": "+page.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/file/+page.ts",
+      "source_location": "L1",
+      "id": "src_routes_file_page_ts",
+      "community": 27,
+      "norm_label": "+page.ts"
+    },
+    {
+      "label": "github.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L1",
+      "id": "src_lib_github_ts",
+      "community": 0,
+      "norm_label": "github.ts"
+    },
+    {
+      "label": "headers()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L7",
+      "id": "github_headers",
+      "community": 0,
+      "norm_label": "headers()"
+    },
+    {
+      "label": "getFile()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L15",
+      "id": "github_getfile",
+      "community": 0,
+      "norm_label": "getfile()"
+    },
+    {
+      "label": "listDocsTree()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L33",
+      "id": "github_listdocstree",
+      "community": 0,
+      "norm_label": "listdocstree()"
+    },
+    {
+      "label": "updateFile()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L55",
+      "id": "github_updatefile",
+      "community": 0,
+      "norm_label": "updatefile()"
+    },
+    {
+      "label": "deleteFile()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L90",
+      "id": "github_deletefile",
+      "community": 0,
+      "norm_label": "deletefile()"
+    },
+    {
+      "label": "deleteFolder()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L122",
+      "id": "github_deletefolder",
+      "community": 0,
+      "norm_label": "deletefolder()"
+    },
+    {
+      "label": "renameFile()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L133",
+      "id": "github_renamefile",
+      "community": 0,
+      "norm_label": "renamefile()"
+    },
+    {
+      "label": "renameFolder()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L139",
+      "id": "github_renamefolder",
+      "community": 0,
+      "norm_label": "renamefolder()"
+    },
+    {
+      "label": "createFile()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L153",
+      "id": "github_createfile",
+      "community": 0,
+      "norm_label": "createfile()"
+    },
+    {
+      "label": "uploadImage()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L176",
+      "id": "github_uploadimage",
+      "community": 0,
+      "norm_label": "uploadimage()"
+    },
+    {
+      "label": "deleteImage()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L209",
+      "id": "github_deleteimage",
+      "community": 0,
+      "norm_label": "deleteimage()"
+    },
+    {
+      "label": "types.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/types.ts",
+      "source_location": "L1",
+      "id": "src_lib_types_ts",
+      "community": 28,
+      "norm_label": "types.ts"
+    },
+    {
+      "label": "index.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/index.ts",
+      "source_location": "L1",
+      "id": "src_lib_index_ts",
+      "community": 29,
+      "norm_label": "index.ts"
+    },
+    {
+      "label": "SidebarNode.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SidebarNode.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_sidebarnode_svelte",
+      "community": 30,
+      "norm_label": "sidebarnode.svelte"
+    },
+    {
+      "label": "Popover.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/Popover.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_popover_svelte",
+      "community": 31,
+      "norm_label": "popover.svelte"
+    },
+    {
+      "label": "Sidebar.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/Sidebar.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_sidebar_svelte",
+      "community": 32,
+      "norm_label": "sidebar.svelte"
+    },
+    {
+      "label": "DeleteFolderModal.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/DeleteFolderModal.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_deletefoldermodal_svelte",
+      "community": 33,
+      "norm_label": "deletefoldermodal.svelte"
+    },
+    {
+      "label": "Settings.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/Settings.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_settings_svelte",
+      "community": 34,
+      "norm_label": "settings.svelte"
+    },
+    {
+      "label": "SearchModal.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SearchModal.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_searchmodal_svelte",
+      "community": 14,
+      "norm_label": "searchmodal.svelte"
+    },
+    {
+      "label": "getHighlightedTitle()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SearchModal.svelte",
+      "source_location": "L138",
+      "id": "searchmodal_gethighlightedtitle",
+      "community": 14,
+      "norm_label": "gethighlightedtitle()"
+    },
+    {
+      "label": "Toast.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/Toast.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_toast_svelte",
+      "community": 35,
+      "norm_label": "toast.svelte"
+    },
+    {
+      "label": "RenameModal.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_renamemodal_svelte",
+      "community": 9,
+      "norm_label": "renamemodal.svelte"
+    },
+    {
+      "label": "handleRename()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L48",
+      "id": "renamemodal_handlerename",
+      "community": 9,
+      "norm_label": "handlerename()"
+    },
+    {
+      "label": "handleKeydown()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L68",
+      "id": "renamemodal_handlekeydown",
+      "community": 9,
+      "norm_label": "handlekeydown()"
+    },
+    {
+      "label": "handleOverlayClick()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L79",
+      "id": "renamemodal_handleoverlayclick",
+      "community": 9,
+      "norm_label": "handleoverlayclick()"
+    },
+    {
+      "label": "onInput()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L85",
+      "id": "renamemodal_oninput",
+      "community": 9,
+      "norm_label": "oninput()"
+    },
+    {
+      "label": "registerInput()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L90",
+      "id": "renamemodal_registerinput",
+      "community": 9,
+      "norm_label": "registerinput()"
+    },
+    {
+      "label": "FileActions.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/FileActions.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_fileactions_svelte",
+      "community": 10,
+      "norm_label": "fileactions.svelte"
+    },
+    {
+      "label": "update()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/FileActions.svelte",
+      "source_location": "L106",
+      "id": "fileactions_update",
+      "community": 10,
+      "norm_label": "update()"
+    },
+    {
+      "label": "destroy()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/FileActions.svelte",
+      "source_location": "L107",
+      "id": "fileactions_destroy",
+      "community": 10,
+      "norm_label": "destroy()"
+    },
+    {
+      "label": "PageActions.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/PageActions.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_pageactions_svelte",
+      "community": 36,
+      "norm_label": "pageactions.svelte"
+    },
+    {
+      "label": "ThemeToggle.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/ThemeToggle.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_themetoggle_svelte",
+      "community": 37,
+      "norm_label": "themetoggle.svelte"
+    },
+    {
+      "label": "ThemeSelector.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SettingsModal/ThemeSelector.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_settingsmodal_themeselector_svelte",
+      "community": 15,
+      "norm_label": "themeselector.svelte"
+    },
+    {
+      "label": "rotate",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SettingsModal/ThemeSelector.svelte",
+      "source_location": "L44",
+      "id": "themeselector_rotate",
+      "community": 15,
+      "norm_label": "rotate"
+    },
+    {
+      "label": "index.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SettingsModal/index.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_settingsmodal_index_svelte",
+      "community": 38,
+      "norm_label": "index.svelte"
+    },
+    {
+      "label": "LookAndFeelPanel.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SettingsModal/LookAndFeelPanel.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_settingsmodal_lookandfeelpanel_svelte",
+      "community": 39,
+      "norm_label": "lookandfeelpanel.svelte"
+    },
+    {
+      "label": "GithubLoginPanel.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SettingsModal/GithubLoginPanel.svelte",
+      "source_location": "L1",
+      "id": "src_lib_components_settingsmodal_githubloginpanel_svelte",
+      "community": 40,
+      "norm_label": "githubloginpanel.svelte"
+    },
+    {
+      "label": "tree.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L1",
+      "id": "src_lib_utils_tree_ts",
+      "community": 4,
+      "norm_label": "tree.ts"
+    },
+    {
+      "label": "buildTree()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L7",
+      "id": "tree_buildtree",
+      "community": 4,
+      "norm_label": "buildtree()"
+    },
+    {
+      "label": "sortNodes()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L36",
+      "id": "tree_sortnodes",
+      "community": 4,
+      "norm_label": "sortnodes()"
+    },
+    {
+      "label": "formatLabel()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L56",
+      "id": "tree_formatlabel",
+      "community": 4,
+      "norm_label": "formatlabel()"
+    },
+    {
+      "label": "flattenTree()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L67",
+      "id": "tree_flattentree",
+      "community": 4,
+      "norm_label": "flattentree()"
+    },
+    {
+      "label": "extractImageUrls()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L82",
+      "id": "tree_extractimageurls",
+      "community": 5,
+      "norm_label": "extractimageurls()"
+    },
+    {
+      "label": "editor.svelte.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L1",
+      "id": "src_lib_stores_editor_svelte_ts",
+      "community": 5,
+      "norm_label": "editor.svelte.ts"
+    },
+    {
+      "label": "EditorState",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L3",
+      "id": "editor_svelte_editorstate",
+      "community": 5,
+      "norm_label": "editorstate"
+    },
+    {
+      "label": ".openFile()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L14",
+      "id": "editor_svelte_editorstate_openfile",
+      "community": 5,
+      "norm_label": ".openfile()"
+    },
+    {
+      "label": ".setContent()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L21",
+      "id": "editor_svelte_editorstate_setcontent",
+      "community": 5,
+      "norm_label": ".setcontent()"
+    },
+    {
+      "label": ".setOriginalContent()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L25",
+      "id": "editor_svelte_editorstate_setoriginalcontent",
+      "community": 5,
+      "norm_label": ".setoriginalcontent()"
+    },
+    {
+      "label": ".markSaved()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L29",
+      "id": "editor_svelte_editorstate_marksaved",
+      "community": 5,
+      "norm_label": ".marksaved()"
+    },
+    {
+      "label": ".save()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L36",
+      "id": "editor_svelte_editorstate_save",
+      "community": 5,
+      "norm_label": ".save()"
+    },
+    {
+      "label": ".triggerToast()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L76",
+      "id": "editor_svelte_editorstate_triggertoast",
+      "community": 5,
+      "norm_label": ".triggertoast()"
+    },
+    {
+      "label": ".reset()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L83",
+      "id": "editor_svelte_editorstate_reset",
+      "community": 5,
+      "norm_label": ".reset()"
+    },
+    {
+      "label": "theme.svelte.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L1",
+      "id": "src_lib_stores_theme_svelte_ts",
+      "community": 8,
+      "norm_label": "theme.svelte.ts"
+    },
+    {
+      "label": "ThemeState",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L11",
+      "id": "theme_svelte_themestate",
+      "community": 8,
+      "norm_label": "themestate"
+    },
+    {
+      "label": ".getInitial()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L15",
+      "id": "theme_svelte_themestate_getinitial",
+      "community": 8,
+      "norm_label": ".getinitial()"
+    },
+    {
+      "label": ".constructor()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L34",
+      "id": "theme_svelte_themestate_constructor",
+      "community": 8,
+      "norm_label": ".constructor()"
+    },
+    {
+      "label": ".setTheme()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L42",
+      "id": "theme_svelte_themestate_settheme",
+      "community": 8,
+      "norm_label": ".settheme()"
+    },
+    {
+      "label": ".toggleVariant()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L46",
+      "id": "theme_svelte_themestate_togglevariant",
+      "community": 8,
+      "norm_label": ".togglevariant()"
+    },
+    {
+      "label": ".sync()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L50",
+      "id": "theme_svelte_themestate_sync",
+      "community": 8,
+      "norm_label": ".sync()"
+    },
+    {
+      "label": "sidebar.svelte.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L1",
+      "id": "src_lib_stores_sidebar_svelte_ts",
+      "community": 4,
+      "norm_label": "sidebar.svelte.ts"
+    },
+    {
+      "label": "SidebarState",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L12",
+      "id": "sidebar_svelte_sidebarstate",
+      "community": 4,
+      "norm_label": "sidebarstate"
+    },
+    {
+      "label": ".loadTree()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L18",
+      "id": "sidebar_svelte_sidebarstate_loadtree",
+      "community": 4,
+      "norm_label": ".loadtree()"
+    },
+    {
+      "label": ".openFile()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L39",
+      "id": "sidebar_svelte_sidebarstate_openfile",
+      "community": 4,
+      "norm_label": ".openfile()"
+    },
+    {
+      "label": ".toggle()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L44",
+      "id": "sidebar_svelte_sidebarstate_toggle",
+      "community": 4,
+      "norm_label": ".toggle()"
+    },
+    {
+      "label": "search.svelte.ts",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L1",
+      "id": "src_lib_stores_search_svelte_ts",
+      "community": 7,
+      "norm_label": "search.svelte.ts"
+    },
+    {
+      "label": "SearchState",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L4",
+      "id": "search_svelte_searchstate",
+      "community": 7,
+      "norm_label": "searchstate"
+    },
+    {
+      "label": ".loadItems()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L12",
+      "id": "search_svelte_searchstate_loaditems",
+      "community": 7,
+      "norm_label": ".loaditems()"
+    },
+    {
+      "label": ".search()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L39",
+      "id": "search_svelte_searchstate_search",
+      "community": 7,
+      "norm_label": ".search()"
+    },
+    {
+      "label": ".open()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L50",
+      "id": "search_svelte_searchstate_open",
+      "community": 7,
+      "norm_label": ".open()"
+    },
+    {
+      "label": ".close()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L57",
+      "id": "search_svelte_searchstate_close",
+      "community": 7,
+      "norm_label": ".close()"
+    },
+    {
+      "label": ".toggle()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L61",
+      "id": "search_svelte_searchstate_toggle",
+      "community": 7,
+      "norm_label": ".toggle()"
+    },
+    {
+      "label": ".navigate()",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L66",
+      "id": "search_svelte_searchstate_navigate",
+      "community": 7,
+      "norm_label": ".navigate()"
+    },
+    {
+      "label": "Spinner.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Spinner.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_spinner_svelte",
+      "community": 41,
+      "norm_label": "spinner.svelte"
+    },
+    {
+      "label": "ThreeDots.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/ThreeDots.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_threedots_svelte",
+      "community": 42,
+      "norm_label": "threedots.svelte"
+    },
+    {
+      "label": "File.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/File.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_file_svelte",
+      "community": 43,
+      "norm_label": "file.svelte"
+    },
+    {
+      "label": "Gear.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Gear.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_gear_svelte",
+      "community": 44,
+      "norm_label": "gear.svelte"
+    },
+    {
+      "label": "Search.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Search.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_search_svelte",
+      "community": 45,
+      "norm_label": "search.svelte"
+    },
+    {
+      "label": "Moon.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Moon.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_moon_svelte",
+      "community": 46,
+      "norm_label": "moon.svelte"
+    },
+    {
+      "label": "Plus.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Plus.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_plus_svelte",
+      "community": 47,
+      "norm_label": "plus.svelte"
+    },
+    {
+      "label": "ChevronDown.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/ChevronDown.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_chevrondown_svelte",
+      "community": 48,
+      "norm_label": "chevrondown.svelte"
+    },
+    {
+      "label": "Edit.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Edit.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_edit_svelte",
+      "community": 49,
+      "norm_label": "edit.svelte"
+    },
+    {
+      "label": "Sun.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Sun.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_sun_svelte",
+      "community": 50,
+      "norm_label": "sun.svelte"
+    },
+    {
+      "label": "Trash.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Trash.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_trash_svelte",
+      "community": 51,
+      "norm_label": "trash.svelte"
+    },
+    {
+      "label": "Save.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Save.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_save_svelte",
+      "community": 52,
+      "norm_label": "save.svelte"
+    },
+    {
+      "label": "IaIcon.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/IaIcon.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_iaicon_svelte",
+      "community": 53,
+      "norm_label": "iaicon.svelte"
+    },
+    {
+      "label": "CopyContext.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/CopyContext.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_copycontext_svelte",
+      "community": 54,
+      "norm_label": "copycontext.svelte"
+    },
+    {
+      "label": "Folder.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Folder.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_folder_svelte",
+      "community": 55,
+      "norm_label": "folder.svelte"
+    },
+    {
+      "label": "Github.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Github.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_github_svelte",
+      "community": 56,
+      "norm_label": "github.svelte"
+    },
+    {
+      "label": "Menu.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Menu.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_menu_svelte",
+      "community": 57,
+      "norm_label": "menu.svelte"
+    },
+    {
+      "label": "Palette.svelte",
+      "file_type": "code",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/icons/Palette.svelte",
+      "source_location": "L1",
+      "id": "src_lib_icons_palette_svelte",
+      "community": 58,
+      "norm_label": "palette.svelte"
+    },
+    {
+      "label": "SvelteKit Runes Mode Configuration",
+      "file_type": "code",
+      "source_file": "client/svelte.config.js",
+      "source_location": "line 7",
+      "id": "sveltekit_runes_mode",
+      "community": 59,
+      "norm_label": "sveltekit runes mode configuration"
+    },
+    {
+      "label": "GitHub API Wrapper",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "id": "github_api_wrapper",
+      "community": 2,
+      "norm_label": "github api wrapper"
+    },
+    {
+      "label": "Get File",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 15",
+      "id": "getfile",
+      "community": 2,
+      "norm_label": "get file"
+    },
+    {
+      "label": "List Docs Tree",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 33",
+      "id": "listdocstree",
+      "community": 2,
+      "norm_label": "list docs tree"
+    },
+    {
+      "label": "Update File",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 55",
+      "id": "updatefile",
+      "community": 2,
+      "norm_label": "update file"
+    },
+    {
+      "label": "Delete File",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 90",
+      "id": "deletefile",
+      "community": 2,
+      "norm_label": "delete file"
+    },
+    {
+      "label": "Delete Folder",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 122",
+      "id": "deletefolder",
+      "community": 2,
+      "norm_label": "delete folder"
+    },
+    {
+      "label": "Rename File",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 133",
+      "id": "renamefile",
+      "community": 2,
+      "norm_label": "rename file"
+    },
+    {
+      "label": "Rename Folder",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 139",
+      "id": "renamefolder",
+      "community": 2,
+      "norm_label": "rename folder"
+    },
+    {
+      "label": "Create File",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 153",
+      "id": "createfile",
+      "community": 2,
+      "norm_label": "create file"
+    },
+    {
+      "label": "Upload Image",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 176",
+      "id": "uploadimage",
+      "community": 6,
+      "norm_label": "upload image"
+    },
+    {
+      "label": "Delete Image",
+      "file_type": "code",
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 209",
+      "id": "deleteimage",
+      "community": 2,
+      "norm_label": "delete image"
+    },
+    {
+      "label": "File Action Type",
+      "file_type": "code",
+      "source_file": "client/src/lib/types.ts",
+      "source_location": "line 14",
+      "id": "file_action",
+      "community": 6,
+      "norm_label": "file action type"
+    },
+    {
+      "label": "Tree Entry Type",
+      "file_type": "code",
+      "source_file": "client/src/lib/types.ts",
+      "source_location": "line 1",
+      "id": "treeentry",
+      "community": 2,
+      "norm_label": "tree entry type"
+    },
+    {
+      "label": "Tree Node Type",
+      "file_type": "code",
+      "source_file": "client/src/lib/types.ts",
+      "source_location": "line 7",
+      "id": "treenode",
+      "community": 6,
+      "norm_label": "tree node type"
+    },
+    {
+      "label": "Sidebar State Store",
+      "file_type": "code",
+      "source_file": "client/src/routes/+layout.svelte",
+      "source_location": "line 10",
+      "id": "sidebar_state",
+      "community": 6,
+      "norm_label": "sidebar state store"
+    },
+    {
+      "label": "Editor State Store",
+      "file_type": "code",
+      "source_file": "client/src/routes/file/+page.svelte",
+      "source_location": "line 4",
+      "id": "editor_state",
+      "community": 6,
+      "norm_label": "editor state store"
+    },
+    {
+      "label": "File Editor Page",
+      "file_type": "code",
+      "source_file": "client/src/routes/file/+page.svelte",
+      "id": "file_page",
+      "community": 6,
+      "norm_label": "file editor page"
+    },
+    {
+      "label": "Milkdown Crepe Editor",
+      "file_type": "code",
+      "source_file": "client/src/routes/file/+page.svelte",
+      "source_location": "line 61",
+      "id": "milkdown_crepe_editor",
+      "community": 6,
+      "norm_label": "milkdown crepe editor"
+    },
+    {
+      "label": "Sidebar Node Component",
+      "file_type": "code",
+      "source_file": "client/src/lib/components/SidebarNode.svelte",
+      "id": "sidebar_node_component",
+      "community": 6,
+      "norm_label": "sidebar node component"
+    },
+    {
+      "label": "Sidebar Component",
+      "file_type": "code",
+      "source_file": "client/src/lib/components/Sidebar.svelte",
+      "id": "sidebar_component",
+      "community": 6,
+      "norm_label": "sidebar component"
+    },
+    {
+      "label": "Delete Folder Modal",
+      "file_type": "code",
+      "source_file": "client/src/lib/components/DeleteFolderModal.svelte",
+      "id": "delete_folder_modal",
+      "community": 60,
+      "norm_label": "delete folder modal"
+    },
+    {
+      "label": "Popover Component",
+      "file_type": "code",
+      "source_file": "client/src/lib/components/Popover.svelte",
+      "id": "popover_component",
+      "community": 61,
+      "norm_label": "popover component"
+    },
+    {
+      "label": "Settings Component",
+      "file_type": "code",
+      "source_file": "client/src/lib/components/Settings.svelte",
+      "id": "settings_component",
+      "community": 62,
+      "norm_label": "settings component"
+    },
+    {
+      "label": "GitHub Environment Configuration",
+      "file_type": "code",
+      "source_file": "client/src/app.d.ts",
+      "id": "github_env_config",
+      "community": 2,
+      "norm_label": "github environment configuration"
+    },
+    {
+      "label": "API Delete Images Endpoint",
+      "file_type": "code",
+      "source_file": "client/src/routes/api/deleteImages/+server.ts",
+      "id": "api_deleteimages",
+      "community": 2,
+      "norm_label": "api delete images endpoint"
+    },
+    {
+      "label": "API Rename Endpoint",
+      "file_type": "code",
+      "source_file": "client/src/routes/api/rename/+server.ts",
+      "id": "api_rename",
+      "community": 2,
+      "norm_label": "api rename endpoint"
+    },
+    {
+      "label": "API Delete Endpoint",
+      "file_type": "code",
+      "source_file": "client/src/routes/api/delete/+server.ts",
+      "id": "api_delete",
+      "community": 2,
+      "norm_label": "api delete endpoint"
+    },
+    {
+      "label": "API Save Endpoint",
+      "file_type": "code",
+      "source_file": "client/src/routes/api/save/+server.ts",
+      "id": "api_save",
+      "community": 2,
+      "norm_label": "api save endpoint"
+    },
+    {
+      "label": "API Upload Endpoint",
+      "file_type": "code",
+      "source_file": "client/src/routes/api/upload/+server.ts",
+      "id": "api_upload",
+      "community": 6,
+      "norm_label": "api upload endpoint"
+    },
+    {
+      "label": "API Docs Endpoint",
+      "file_type": "code",
+      "source_file": "client/src/routes/api/docs/[...path]/+server.ts",
+      "id": "api_docs",
+      "community": 2,
+      "norm_label": "api docs endpoint"
+    },
+    {
+      "label": "RenameModal Component",
+      "file_type": "code",
+      "source_file": "client/src/lib/components/RenameModal.svelte",
+      "id": "renamemodal_svelte",
+      "community": 16,
+      "norm_label": "renamemodal component"
+    },
+    {
+      "label": "Spinner Icon Component",
+      "file_type": "code",
+      "source_file": "client/src/lib/components/RenameModal.svelte",
+      "source_location": "line 2",
+      "id": "spinner_icon",
+      "community": 16,
+      "norm_label": "spinner icon component"
+    },
+    {
+      "label": "@threlte/core",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "source_url": "https://threlte.xyz/docs/reference/core/getting-started/",
+      "id": "threlte_core",
+      "community": 1,
+      "norm_label": "@threlte/core"
+    },
+    {
+      "label": "@threlte/extras",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/README.md",
+      "source_url": "https://threlte.xyz/docs/reference/extras/getting-started/",
+      "id": "threlte_extras",
+      "community": 1,
+      "norm_label": "@threlte/extras"
+    },
+    {
+      "label": "@threlte/rapier",
+      "file_type": "document",
+      "source_file": "docs/threlte/rapier_guide.md",
+      "source_url": "https://threlte.xyz/docs/reference/rapier/getting-started/",
+      "id": "threlte_rapier",
+      "community": 3,
+      "norm_label": "@threlte/rapier"
+    },
+    {
+      "label": "Three.js",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "source_url": "https://threejs.org/docs/",
+      "id": "threejs",
+      "community": 1,
+      "norm_label": "three.js"
+    },
+    {
+      "label": "Rapier Physics Engine",
+      "file_type": "document",
+      "source_file": "docs/threlte/rapier_guide.md",
+      "source_url": "https://rapier.rs/docs/",
+      "id": "rapier",
+      "community": 3,
+      "norm_label": "rapier physics engine"
+    },
+    {
+      "label": "Canvas Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "id": "canvas_component",
+      "community": 1,
+      "norm_label": "canvas component"
+    },
+    {
+      "label": "T Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "id": "t_component",
+      "community": 1,
+      "norm_label": "t component"
+    },
+    {
+      "label": "useTask Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "id": "usetask_hook",
+      "community": 11,
+      "norm_label": "usetask hook"
+    },
+    {
+      "label": "useThrelte Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "id": "usethrelte_hook",
+      "community": 1,
+      "norm_label": "usethrelte hook"
+    },
+    {
+      "label": "useStage Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "id": "usestage_hook",
+      "community": 11,
+      "norm_label": "usestage hook"
+    },
+    {
+      "label": "useLoader Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "id": "useloader_hook",
+      "community": 3,
+      "norm_label": "useloader hook"
+    },
+    {
+      "label": "interactivity Plugin",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/interaction.md",
+      "id": "interactivity_plugin",
+      "community": 1,
+      "norm_label": "interactivity plugin"
+    },
+    {
+      "label": "useGltf Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/content.md",
+      "id": "usegltf_hook",
+      "community": 3,
+      "norm_label": "usegltf hook"
+    },
+    {
+      "label": "useTexture Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/content.md",
+      "id": "usetexture_hook",
+      "community": 3,
+      "norm_label": "usetexture hook"
+    },
+    {
+      "label": "GLTF Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/content.md",
+      "id": "gltf_component",
+      "community": 3,
+      "norm_label": "gltf component"
+    },
+    {
+      "label": "AutoColliders Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/rapier_guide.md",
+      "id": "autocolliders_component",
+      "community": 3,
+      "norm_label": "autocolliders component"
+    },
+    {
+      "label": "World Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/rapier_guide.md",
+      "id": "world_component",
+      "community": 3,
+      "norm_label": "world component"
+    },
+    {
+      "label": "RigidBody Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/rapier_guide.md",
+      "id": "rigidbody_component",
+      "community": 3,
+      "norm_label": "rigidbody component"
+    },
+    {
+      "label": "Collider Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/rapier_guide.md",
+      "id": "collider_component",
+      "community": 3,
+      "norm_label": "collider component"
+    },
+    {
+      "label": "usePhysicsTask Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/rapier_guide.md",
+      "id": "usePhysicsTask_hook",
+      "community": 11,
+      "norm_label": "usephysicstask hook"
+    },
+    {
+      "label": "useRapier Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/rapier_guide.md",
+      "id": "useRapier_hook",
+      "community": 3,
+      "norm_label": "userapier hook"
+    },
+    {
+      "label": "Suspense Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/loading.md",
+      "id": "suspense_component",
+      "community": 17,
+      "norm_label": "suspense component"
+    },
+    {
+      "label": "useProgress Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/loading.md",
+      "id": "useProgress_hook",
+      "community": 17,
+      "norm_label": "useprogress hook"
+    },
+    {
+      "label": "InstancedMesh Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/performance.md",
+      "id": "instancedmesh_component",
+      "community": 1,
+      "norm_label": "instancedmesh component"
+    },
+    {
+      "label": "Instance Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/performance.md",
+      "id": "instance_component",
+      "community": 1,
+      "norm_label": "instance component"
+    },
+    {
+      "label": "OrbitControls Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/interaction.md",
+      "id": "orbitcontrols_component",
+      "community": 1,
+      "norm_label": "orbitcontrols component"
+    },
+    {
+      "label": "CameraControls Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/interaction.md",
+      "id": "cameracontrols_component",
+      "community": 1,
+      "norm_label": "cameracontrols component"
+    },
+    {
+      "label": "useKeyboard Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/interaction.md",
+      "id": "useKeyboard_hook",
+      "community": 12,
+      "norm_label": "usekeyboard hook"
+    },
+    {
+      "label": "useGamepad Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/interaction.md",
+      "id": "useGamepad_hook",
+      "community": 12,
+      "norm_label": "usegamepad hook"
+    },
+    {
+      "label": "useInputMap Hook",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/interaction.md",
+      "id": "useInputMap_hook",
+      "community": 12,
+      "norm_label": "useinputmap hook"
+    },
+    {
+      "label": "injectPlugin Function",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "id": "injectplugin_function",
+      "community": 1,
+      "norm_label": "injectplugin function"
+    },
+    {
+      "label": "extend Function",
+      "file_type": "document",
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "id": "extend_function",
+      "community": 1,
+      "norm_label": "extend function"
+    },
+    {
+      "label": "TransformControls Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/interaction.md",
+      "id": "transformcontrols_component",
+      "community": 1,
+      "norm_label": "transformcontrols component"
+    },
+    {
+      "label": "HTML Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/content.md",
+      "id": "html_component",
+      "community": 1,
+      "norm_label": "html component"
+    },
+    {
+      "label": "Text Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/content.md",
+      "id": "text_component",
+      "community": 1,
+      "norm_label": "text component"
+    },
+    {
+      "label": "AudioListener Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/audio.md",
+      "id": "audiolistener_component",
+      "community": 18,
+      "norm_label": "audiolistener component"
+    },
+    {
+      "label": "PositionalAudio Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/audio.md",
+      "id": "positionalaudio_component",
+      "community": 18,
+      "norm_label": "positionalaudio component"
+    },
+    {
+      "label": "Environment Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/staging.md",
+      "id": "environment_component",
+      "community": 19,
+      "norm_label": "environment component"
+    },
+    {
+      "label": "ContactShadows Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/staging.md",
+      "id": "contactshadows_component",
+      "community": 19,
+      "norm_label": "contactshadows component"
+    },
+    {
+      "label": "Edges Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/visual_effects.md",
+      "id": "edges_component",
+      "community": 13,
+      "norm_label": "edges component"
+    },
+    {
+      "label": "Wireframe Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/visual_effects.md",
+      "id": "wireframe_component",
+      "community": 13,
+      "norm_label": "wireframe component"
+    },
+    {
+      "label": "Outlines Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/visual_effects.md",
+      "id": "outlines_component",
+      "community": 13,
+      "norm_label": "outlines component"
+    },
+    {
+      "label": "PerfMonitor Component",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/performance.md",
+      "id": "perfmonitor_component",
+      "community": 1,
+      "norm_label": "perfmonitor component"
+    },
+    {
+      "label": "layers Plugin",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/staging.md",
+      "id": "layerplugin",
+      "community": 1,
+      "norm_label": "layers plugin"
+    },
+    {
+      "label": "transitions Plugin",
+      "file_type": "document",
+      "source_file": "docs/threlte/extras/staging.md",
+      "id": "transitionplugin",
+      "community": 1,
+      "norm_label": "transitions plugin"
+    }
+  ],
+  "links": [
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/deleteImages/+server.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "src_routes_api_deleteimages_server_ts",
+      "_tgt": "server_delete",
+      "source": "src_routes_api_deleteimages_server_ts",
+      "target": "server_delete",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/delete/+server.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "src_routes_api_delete_server_ts",
+      "_tgt": "server_delete",
+      "source": "server_delete",
+      "target": "src_routes_api_delete_server_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/delete/+server.ts",
+      "source_location": "L13",
+      "weight": 1.0,
+      "_src": "server_delete",
+      "_tgt": "github_deletefolder",
+      "source": "server_delete",
+      "target": "github_deletefolder"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/delete/+server.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "server_delete",
+      "_tgt": "github_deletefile",
+      "source": "server_delete",
+      "target": "github_deletefile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/rename/+server.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "src_routes_api_rename_server_ts",
+      "_tgt": "server_put",
+      "source": "src_routes_api_rename_server_ts",
+      "target": "server_put",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/save/+server.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "src_routes_api_save_server_ts",
+      "_tgt": "server_put",
+      "source": "server_put",
+      "target": "src_routes_api_save_server_ts",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/rename/+server.ts",
+      "source_location": "L19",
+      "weight": 1.0,
+      "_src": "server_put",
+      "_tgt": "github_listdocstree",
+      "source": "server_put",
+      "target": "github_listdocstree"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/rename/+server.ts",
+      "source_location": "L28",
+      "weight": 1.0,
+      "_src": "server_put",
+      "_tgt": "github_renamefolder",
+      "source": "server_put",
+      "target": "github_renamefolder"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/rename/+server.ts",
+      "source_location": "L35",
+      "weight": 1.0,
+      "_src": "server_put",
+      "_tgt": "github_renamefile",
+      "source": "server_put",
+      "target": "github_renamefile"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/save/+server.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "server_put",
+      "_tgt": "server_get",
+      "source": "server_put",
+      "target": "server_get"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/save/+server.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "server_put",
+      "_tgt": "github_createfile",
+      "source": "server_put",
+      "target": "github_createfile"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/save/+server.ts",
+      "source_location": "L17",
+      "weight": 1.0,
+      "_src": "server_put",
+      "_tgt": "github_updatefile",
+      "source": "server_put",
+      "target": "github_updatefile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/upload/+server.ts",
+      "source_location": "L5",
+      "weight": 1.0,
+      "_src": "src_routes_api_upload_server_ts",
+      "_tgt": "server_post",
+      "source": "src_routes_api_upload_server_ts",
+      "target": "server_post",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/upload/+server.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "server_post",
+      "_tgt": "server_get",
+      "source": "server_post",
+      "target": "server_get"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/upload/+server.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "server_post",
+      "_tgt": "github_uploadimage",
+      "source": "server_post",
+      "target": "github_uploadimage"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/docs/[...path]/+server.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "src_routes_api_docs_path_server_ts",
+      "_tgt": "server_get",
+      "source": "src_routes_api_docs_path_server_ts",
+      "target": "server_get",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/docs/[...path]/+server.ts",
+      "source_location": "L8",
+      "weight": 1.0,
+      "_src": "server_get",
+      "_tgt": "github_listdocstree",
+      "source": "server_get",
+      "target": "github_listdocstree"
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/routes/api/docs/[...path]/+server.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "server_get",
+      "_tgt": "github_getfile",
+      "source": "server_get",
+      "target": "github_getfile"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_headers",
+      "source": "src_lib_github_ts",
+      "target": "github_headers",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_getfile",
+      "source": "src_lib_github_ts",
+      "target": "github_getfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L33",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_listdocstree",
+      "source": "src_lib_github_ts",
+      "target": "github_listdocstree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L55",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_updatefile",
+      "source": "src_lib_github_ts",
+      "target": "github_updatefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_deletefile",
+      "source": "src_lib_github_ts",
+      "target": "github_deletefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L122",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_deletefolder",
+      "source": "src_lib_github_ts",
+      "target": "github_deletefolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L133",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_renamefile",
+      "source": "src_lib_github_ts",
+      "target": "github_renamefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L139",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_renamefolder",
+      "source": "src_lib_github_ts",
+      "target": "github_renamefolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L153",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_createfile",
+      "source": "src_lib_github_ts",
+      "target": "github_createfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L176",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_uploadimage",
+      "source": "src_lib_github_ts",
+      "target": "github_uploadimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L209",
+      "weight": 1.0,
+      "_src": "src_lib_github_ts",
+      "_tgt": "github_deleteimage",
+      "source": "src_lib_github_ts",
+      "target": "github_deleteimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L20",
+      "weight": 1.0,
+      "_src": "github_getfile",
+      "_tgt": "github_headers",
+      "source": "github_headers",
+      "target": "github_getfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "github_listdocstree",
+      "_tgt": "github_headers",
+      "source": "github_headers",
+      "target": "github_listdocstree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L58",
+      "weight": 1.0,
+      "_src": "github_updatefile",
+      "_tgt": "github_headers",
+      "source": "github_headers",
+      "target": "github_updatefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L93",
+      "weight": 1.0,
+      "_src": "github_deletefile",
+      "_tgt": "github_headers",
+      "source": "github_headers",
+      "target": "github_deletefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L161",
+      "weight": 1.0,
+      "_src": "github_createfile",
+      "_tgt": "github_headers",
+      "source": "github_headers",
+      "target": "github_createfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L194",
+      "weight": 1.0,
+      "_src": "github_uploadimage",
+      "_tgt": "github_headers",
+      "source": "github_headers",
+      "target": "github_uploadimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L214",
+      "weight": 1.0,
+      "_src": "github_deleteimage",
+      "_tgt": "github_headers",
+      "source": "github_headers",
+      "target": "github_deleteimage",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L134",
+      "weight": 1.0,
+      "_src": "github_renamefile",
+      "_tgt": "github_getfile",
+      "source": "github_getfile",
+      "target": "github_renamefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L146",
+      "weight": 1.0,
+      "_src": "github_renamefolder",
+      "_tgt": "github_getfile",
+      "source": "github_getfile",
+      "target": "github_renamefolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L123",
+      "weight": 1.0,
+      "_src": "github_deletefolder",
+      "_tgt": "github_listdocstree",
+      "source": "github_listdocstree",
+      "target": "github_deletefolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L140",
+      "weight": 1.0,
+      "_src": "github_renamefolder",
+      "_tgt": "github_listdocstree",
+      "source": "github_listdocstree",
+      "target": "github_renamefolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L129",
+      "weight": 1.0,
+      "_src": "github_deletefolder",
+      "_tgt": "github_deletefile",
+      "source": "github_deletefile",
+      "target": "github_deletefolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L136",
+      "weight": 1.0,
+      "_src": "github_renamefile",
+      "_tgt": "github_deletefile",
+      "source": "github_deletefile",
+      "target": "github_renamefile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L149",
+      "weight": 1.0,
+      "_src": "github_renamefolder",
+      "_tgt": "github_deletefile",
+      "source": "github_deletefile",
+      "target": "github_renamefolder",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L135",
+      "weight": 1.0,
+      "_src": "github_renamefile",
+      "_tgt": "github_createfile",
+      "source": "github_renamefile",
+      "target": "github_createfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/github.ts",
+      "source_location": "L148",
+      "weight": 1.0,
+      "_src": "github_renamefolder",
+      "_tgt": "github_createfile",
+      "source": "github_renamefolder",
+      "target": "github_createfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SearchModal.svelte",
+      "source_location": "L138",
+      "weight": 1.0,
+      "_src": "src_lib_components_searchmodal_svelte",
+      "_tgt": "searchmodal_gethighlightedtitle",
+      "source": "src_lib_components_searchmodal_svelte",
+      "target": "searchmodal_gethighlightedtitle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L48",
+      "weight": 1.0,
+      "_src": "src_lib_components_renamemodal_svelte",
+      "_tgt": "renamemodal_handlerename",
+      "source": "src_lib_components_renamemodal_svelte",
+      "target": "renamemodal_handlerename",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L68",
+      "weight": 1.0,
+      "_src": "src_lib_components_renamemodal_svelte",
+      "_tgt": "renamemodal_handlekeydown",
+      "source": "src_lib_components_renamemodal_svelte",
+      "target": "renamemodal_handlekeydown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L79",
+      "weight": 1.0,
+      "_src": "src_lib_components_renamemodal_svelte",
+      "_tgt": "renamemodal_handleoverlayclick",
+      "source": "src_lib_components_renamemodal_svelte",
+      "target": "renamemodal_handleoverlayclick",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L85",
+      "weight": 1.0,
+      "_src": "src_lib_components_renamemodal_svelte",
+      "_tgt": "renamemodal_oninput",
+      "source": "src_lib_components_renamemodal_svelte",
+      "target": "renamemodal_oninput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L90",
+      "weight": 1.0,
+      "_src": "src_lib_components_renamemodal_svelte",
+      "_tgt": "renamemodal_registerinput",
+      "source": "src_lib_components_renamemodal_svelte",
+      "target": "renamemodal_registerinput",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/RenameModal.svelte",
+      "source_location": "L73",
+      "weight": 1.0,
+      "_src": "renamemodal_handlekeydown",
+      "_tgt": "renamemodal_handlerename",
+      "source": "renamemodal_handlerename",
+      "target": "renamemodal_handlekeydown",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/FileActions.svelte",
+      "source_location": "L106",
+      "weight": 1.0,
+      "_src": "src_lib_components_fileactions_svelte",
+      "_tgt": "fileactions_update",
+      "source": "src_lib_components_fileactions_svelte",
+      "target": "fileactions_update",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/FileActions.svelte",
+      "source_location": "L107",
+      "weight": 1.0,
+      "_src": "src_lib_components_fileactions_svelte",
+      "_tgt": "fileactions_destroy",
+      "source": "src_lib_components_fileactions_svelte",
+      "target": "fileactions_destroy",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/components/SettingsModal/ThemeSelector.svelte",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "src_lib_components_settingsmodal_themeselector_svelte",
+      "_tgt": "themeselector_rotate",
+      "source": "src_lib_components_settingsmodal_themeselector_svelte",
+      "target": "themeselector_rotate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L7",
+      "weight": 1.0,
+      "_src": "src_lib_utils_tree_ts",
+      "_tgt": "tree_buildtree",
+      "source": "src_lib_utils_tree_ts",
+      "target": "tree_buildtree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "src_lib_utils_tree_ts",
+      "_tgt": "tree_sortnodes",
+      "source": "src_lib_utils_tree_ts",
+      "target": "tree_sortnodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L56",
+      "weight": 1.0,
+      "_src": "src_lib_utils_tree_ts",
+      "_tgt": "tree_formatlabel",
+      "source": "src_lib_utils_tree_ts",
+      "target": "tree_formatlabel",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L67",
+      "weight": 1.0,
+      "_src": "src_lib_utils_tree_ts",
+      "_tgt": "tree_flattentree",
+      "source": "src_lib_utils_tree_ts",
+      "target": "tree_flattentree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L82",
+      "weight": 1.0,
+      "_src": "src_lib_utils_tree_ts",
+      "_tgt": "tree_extractimageurls",
+      "source": "src_lib_utils_tree_ts",
+      "target": "tree_extractimageurls",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L32",
+      "weight": 1.0,
+      "_src": "tree_buildtree",
+      "_tgt": "tree_sortnodes",
+      "source": "tree_buildtree",
+      "target": "tree_sortnodes",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L31",
+      "weight": 1.0,
+      "_src": "sidebar_svelte_sidebarstate_loadtree",
+      "_tgt": "tree_buildtree",
+      "source": "tree_buildtree",
+      "target": "sidebar_svelte_sidebarstate_loadtree"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/utils/tree.ts",
+      "source_location": "L72",
+      "weight": 1.0,
+      "_src": "tree_flattentree",
+      "_tgt": "tree_formatlabel",
+      "source": "tree_formatlabel",
+      "target": "tree_flattentree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate_save",
+      "_tgt": "tree_extractimageurls",
+      "source": "tree_extractimageurls",
+      "target": "editor_svelte_editorstate_save"
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L3",
+      "weight": 1.0,
+      "_src": "src_lib_stores_editor_svelte_ts",
+      "_tgt": "editor_svelte_editorstate",
+      "source": "src_lib_stores_editor_svelte_ts",
+      "target": "editor_svelte_editorstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L14",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate",
+      "_tgt": "editor_svelte_editorstate_openfile",
+      "source": "editor_svelte_editorstate",
+      "target": "editor_svelte_editorstate_openfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L21",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate",
+      "_tgt": "editor_svelte_editorstate_setcontent",
+      "source": "editor_svelte_editorstate",
+      "target": "editor_svelte_editorstate_setcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L25",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate",
+      "_tgt": "editor_svelte_editorstate_setoriginalcontent",
+      "source": "editor_svelte_editorstate",
+      "target": "editor_svelte_editorstate_setoriginalcontent",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L29",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate",
+      "_tgt": "editor_svelte_editorstate_marksaved",
+      "source": "editor_svelte_editorstate",
+      "target": "editor_svelte_editorstate_marksaved",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate",
+      "_tgt": "editor_svelte_editorstate_save",
+      "source": "editor_svelte_editorstate",
+      "target": "editor_svelte_editorstate_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L76",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate",
+      "_tgt": "editor_svelte_editorstate_triggertoast",
+      "source": "editor_svelte_editorstate",
+      "target": "editor_svelte_editorstate_triggertoast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L83",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate",
+      "_tgt": "editor_svelte_editorstate_reset",
+      "source": "editor_svelte_editorstate",
+      "target": "editor_svelte_editorstate_reset",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L65",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate_save",
+      "_tgt": "editor_svelte_editorstate_marksaved",
+      "source": "editor_svelte_editorstate_marksaved",
+      "target": "editor_svelte_editorstate_save",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/editor.svelte.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "editor_svelte_editorstate_save",
+      "_tgt": "editor_svelte_editorstate_triggertoast",
+      "source": "editor_svelte_editorstate_save",
+      "target": "editor_svelte_editorstate_triggertoast",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L11",
+      "weight": 1.0,
+      "_src": "src_lib_stores_theme_svelte_ts",
+      "_tgt": "theme_svelte_themestate",
+      "source": "src_lib_stores_theme_svelte_ts",
+      "target": "theme_svelte_themestate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L15",
+      "weight": 1.0,
+      "_src": "theme_svelte_themestate",
+      "_tgt": "theme_svelte_themestate_getinitial",
+      "source": "theme_svelte_themestate",
+      "target": "theme_svelte_themestate_getinitial",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L34",
+      "weight": 1.0,
+      "_src": "theme_svelte_themestate",
+      "_tgt": "theme_svelte_themestate_constructor",
+      "source": "theme_svelte_themestate",
+      "target": "theme_svelte_themestate_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L42",
+      "weight": 1.0,
+      "_src": "theme_svelte_themestate",
+      "_tgt": "theme_svelte_themestate_settheme",
+      "source": "theme_svelte_themestate",
+      "target": "theme_svelte_themestate_settheme",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L46",
+      "weight": 1.0,
+      "_src": "theme_svelte_themestate",
+      "_tgt": "theme_svelte_themestate_togglevariant",
+      "source": "theme_svelte_themestate",
+      "target": "theme_svelte_themestate_togglevariant",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "theme_svelte_themestate",
+      "_tgt": "theme_svelte_themestate_sync",
+      "source": "theme_svelte_themestate",
+      "target": "theme_svelte_themestate_sync",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/theme.svelte.ts",
+      "source_location": "L36",
+      "weight": 1.0,
+      "_src": "theme_svelte_themestate_constructor",
+      "_tgt": "theme_svelte_themestate_getinitial",
+      "source": "theme_svelte_themestate_getinitial",
+      "target": "theme_svelte_themestate_constructor",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "src_lib_stores_sidebar_svelte_ts",
+      "_tgt": "sidebar_svelte_sidebarstate",
+      "source": "src_lib_stores_sidebar_svelte_ts",
+      "target": "sidebar_svelte_sidebarstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L18",
+      "weight": 1.0,
+      "_src": "sidebar_svelte_sidebarstate",
+      "_tgt": "sidebar_svelte_sidebarstate_loadtree",
+      "source": "sidebar_svelte_sidebarstate",
+      "target": "sidebar_svelte_sidebarstate_loadtree",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "sidebar_svelte_sidebarstate",
+      "_tgt": "sidebar_svelte_sidebarstate_openfile",
+      "source": "sidebar_svelte_sidebarstate",
+      "target": "sidebar_svelte_sidebarstate_openfile",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/sidebar.svelte.ts",
+      "source_location": "L44",
+      "weight": 1.0,
+      "_src": "sidebar_svelte_sidebarstate",
+      "_tgt": "sidebar_svelte_sidebarstate_toggle",
+      "source": "sidebar_svelte_sidebarstate",
+      "target": "sidebar_svelte_sidebarstate_toggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L4",
+      "weight": 1.0,
+      "_src": "src_lib_stores_search_svelte_ts",
+      "_tgt": "search_svelte_searchstate",
+      "source": "src_lib_stores_search_svelte_ts",
+      "target": "search_svelte_searchstate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L12",
+      "weight": 1.0,
+      "_src": "search_svelte_searchstate",
+      "_tgt": "search_svelte_searchstate_loaditems",
+      "source": "search_svelte_searchstate",
+      "target": "search_svelte_searchstate_loaditems",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L39",
+      "weight": 1.0,
+      "_src": "search_svelte_searchstate",
+      "_tgt": "search_svelte_searchstate_search",
+      "source": "search_svelte_searchstate",
+      "target": "search_svelte_searchstate_search",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L50",
+      "weight": 1.0,
+      "_src": "search_svelte_searchstate",
+      "_tgt": "search_svelte_searchstate_open",
+      "source": "search_svelte_searchstate",
+      "target": "search_svelte_searchstate_open",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L57",
+      "weight": 1.0,
+      "_src": "search_svelte_searchstate",
+      "_tgt": "search_svelte_searchstate_close",
+      "source": "search_svelte_searchstate",
+      "target": "search_svelte_searchstate_close",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L61",
+      "weight": 1.0,
+      "_src": "search_svelte_searchstate",
+      "_tgt": "search_svelte_searchstate_toggle",
+      "source": "search_svelte_searchstate",
+      "target": "search_svelte_searchstate_toggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L66",
+      "weight": 1.0,
+      "_src": "search_svelte_searchstate",
+      "_tgt": "search_svelte_searchstate_navigate",
+      "source": "search_svelte_searchstate",
+      "target": "search_svelte_searchstate_navigate",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L63",
+      "weight": 1.0,
+      "_src": "search_svelte_searchstate_toggle",
+      "_tgt": "search_svelte_searchstate_open",
+      "source": "search_svelte_searchstate_open",
+      "target": "search_svelte_searchstate_toggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "/home/guilherme.coelho/Projects/personal/AI_notes/client/src/lib/stores/search.svelte.ts",
+      "source_location": "L62",
+      "weight": 1.0,
+      "_src": "search_svelte_searchstate_toggle",
+      "_tgt": "search_svelte_searchstate_close",
+      "source": "search_svelte_searchstate_close",
+      "target": "search_svelte_searchstate_toggle",
+      "confidence_score": 1.0
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 1",
+      "weight": 1.0,
+      "_src": "github_api_wrapper",
+      "_tgt": "github_env_config",
+      "source": "github_api_wrapper",
+      "target": "github_env_config"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 2",
+      "weight": 1.0,
+      "_src": "github_api_wrapper",
+      "_tgt": "treeentry",
+      "source": "github_api_wrapper",
+      "target": "treeentry"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/docs/[...path]/+server.ts",
+      "source_location": "line 15",
+      "weight": 1.0,
+      "_src": "api_docs",
+      "_tgt": "getfile",
+      "source": "getfile",
+      "target": "api_docs"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/file/+page.svelte",
+      "source_location": "line 25",
+      "weight": 1.0,
+      "_src": "file_page",
+      "_tgt": "getfile",
+      "source": "getfile",
+      "target": "file_page"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 146",
+      "weight": 1.0,
+      "_src": "renamefolder",
+      "_tgt": "getfile",
+      "source": "getfile",
+      "target": "renamefolder"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 134",
+      "weight": 1.0,
+      "_src": "renamefile",
+      "_tgt": "getfile",
+      "source": "getfile",
+      "target": "renamefile"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 56",
+      "weight": 1.0,
+      "_src": "updatefile",
+      "_tgt": "getfile",
+      "source": "getfile",
+      "target": "updatefile"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 91",
+      "weight": 1.0,
+      "_src": "deletefile",
+      "_tgt": "getfile",
+      "source": "getfile",
+      "target": "deletefile"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "client/src/lib/github.ts",
+      "weight": 1.0,
+      "_src": "createfile",
+      "_tgt": "getfile",
+      "source": "getfile",
+      "target": "createfile"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 46",
+      "weight": 1.0,
+      "_src": "listdocstree",
+      "_tgt": "treeentry",
+      "source": "listdocstree",
+      "target": "treeentry"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/rename/+server.ts",
+      "source_location": "line 19",
+      "weight": 1.0,
+      "_src": "api_rename",
+      "_tgt": "listdocstree",
+      "source": "listdocstree",
+      "target": "api_rename"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/docs/[...path]/+server.ts",
+      "source_location": "line 8",
+      "weight": 1.0,
+      "_src": "api_docs",
+      "_tgt": "listdocstree",
+      "source": "listdocstree",
+      "target": "api_docs"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 123",
+      "weight": 1.0,
+      "_src": "deletefolder",
+      "_tgt": "listdocstree",
+      "source": "listdocstree",
+      "target": "deletefolder"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 140",
+      "weight": 1.0,
+      "_src": "renamefolder",
+      "_tgt": "listdocstree",
+      "source": "listdocstree",
+      "target": "renamefolder"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/save/+server.ts",
+      "source_location": "line 17",
+      "weight": 1.0,
+      "_src": "api_save",
+      "_tgt": "updatefile",
+      "source": "updatefile",
+      "target": "api_save"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/delete/+server.ts",
+      "source_location": "line 15",
+      "weight": 1.0,
+      "_src": "api_delete",
+      "_tgt": "deletefile",
+      "source": "deletefile",
+      "target": "api_delete"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 128",
+      "weight": 1.0,
+      "_src": "deletefolder",
+      "_tgt": "deletefile",
+      "source": "deletefile",
+      "target": "deletefolder"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 149",
+      "weight": 1.0,
+      "_src": "renamefolder",
+      "_tgt": "deletefile",
+      "source": "deletefile",
+      "target": "renamefolder"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 136",
+      "weight": 1.0,
+      "_src": "renamefile",
+      "_tgt": "deletefile",
+      "source": "deletefile",
+      "target": "renamefile"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/delete/+server.ts",
+      "source_location": "line 13",
+      "weight": 1.0,
+      "_src": "api_delete",
+      "_tgt": "deletefolder",
+      "source": "deletefolder",
+      "target": "api_delete"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/rename/+server.ts",
+      "source_location": "line 35",
+      "weight": 1.0,
+      "_src": "api_rename",
+      "_tgt": "renamefile",
+      "source": "renamefile",
+      "target": "api_rename"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 135",
+      "weight": 1.0,
+      "_src": "renamefile",
+      "_tgt": "createfile",
+      "source": "renamefile",
+      "target": "createfile"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/rename/+server.ts",
+      "source_location": "line 28",
+      "weight": 1.0,
+      "_src": "api_rename",
+      "_tgt": "renamefolder",
+      "source": "renamefolder",
+      "target": "api_rename"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts",
+      "source_location": "line 148",
+      "weight": 1.0,
+      "_src": "renamefolder",
+      "_tgt": "createfile",
+      "source": "renamefolder",
+      "target": "createfile"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/save/+server.ts",
+      "source_location": "line 15",
+      "weight": 1.0,
+      "_src": "api_save",
+      "_tgt": "createfile",
+      "source": "createfile",
+      "target": "api_save"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/upload/+server.ts",
+      "source_location": "line 20",
+      "weight": 1.0,
+      "_src": "api_upload",
+      "_tgt": "uploadimage",
+      "source": "uploadimage",
+      "target": "api_upload"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/file/+page.svelte",
+      "source_location": "line 69",
+      "weight": 1.0,
+      "_src": "file_page",
+      "_tgt": "uploadimage",
+      "source": "uploadimage",
+      "target": "file_page"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/api/deleteImages/+server.ts",
+      "source_location": "line 12",
+      "weight": 1.0,
+      "_src": "api_deleteimages",
+      "_tgt": "deleteimage",
+      "source": "deleteimage",
+      "target": "api_deleteimages"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "client/src/lib/components/SidebarNode.svelte",
+      "weight": 1.0,
+      "_src": "sidebar_node_component",
+      "_tgt": "file_action",
+      "source": "file_action",
+      "target": "sidebar_node_component"
+    },
+    {
+      "relation": "shares_data_with",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/components/SidebarNode.svelte",
+      "source_location": "line 2",
+      "weight": 1.0,
+      "_src": "sidebar_node_component",
+      "_tgt": "treenode",
+      "source": "treenode",
+      "target": "sidebar_node_component"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/components/Sidebar.svelte",
+      "source_location": "line 3",
+      "weight": 1.0,
+      "_src": "sidebar_component",
+      "_tgt": "sidebar_state",
+      "source": "sidebar_state",
+      "target": "sidebar_component"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/components/SidebarNode.svelte",
+      "source_location": "line 6",
+      "weight": 1.0,
+      "_src": "sidebar_node_component",
+      "_tgt": "sidebar_state",
+      "source": "sidebar_state",
+      "target": "sidebar_node_component"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/file/+page.svelte",
+      "source_location": "line 5",
+      "weight": 1.0,
+      "_src": "file_page",
+      "_tgt": "sidebar_state",
+      "source": "sidebar_state",
+      "target": "file_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/file/+page.svelte",
+      "source_location": "line 4",
+      "weight": 1.0,
+      "_src": "file_page",
+      "_tgt": "editor_state",
+      "source": "editor_state",
+      "target": "file_page"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/routes/file/+page.svelte",
+      "source_location": "line 61",
+      "weight": 1.0,
+      "_src": "file_page",
+      "_tgt": "milkdown_crepe_editor",
+      "source": "file_page",
+      "target": "milkdown_crepe_editor"
+    },
+    {
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/components/Sidebar.svelte",
+      "source_location": "line 75",
+      "weight": 1.0,
+      "_src": "sidebar_component",
+      "_tgt": "sidebar_node_component",
+      "source": "sidebar_node_component",
+      "target": "sidebar_component"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "client/src/routes/api/delete/+server.ts",
+      "weight": 1.0,
+      "_src": "api_delete",
+      "_tgt": "api_deleteimages",
+      "source": "api_deleteimages",
+      "target": "api_delete"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "client/src/routes/api/rename/+server.ts",
+      "weight": 1.0,
+      "_src": "api_rename",
+      "_tgt": "api_delete",
+      "source": "api_rename",
+      "target": "api_delete"
+    },
+    {
+      "relation": "imports",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/components/RenameModal.svelte",
+      "source_location": "line 2",
+      "weight": 1.0,
+      "_src": "renamemodal_svelte",
+      "_tgt": "spinner_icon",
+      "source": "renamemodal_svelte",
+      "target": "spinner_icon"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "threlte_core",
+      "_tgt": "threejs",
+      "source": "threlte_core",
+      "target": "threejs"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "threlte_rapier",
+      "_tgt": "threlte_core",
+      "source": "threlte_core",
+      "target": "threlte_rapier"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/README.md",
+      "weight": 1.0,
+      "_src": "threlte_extras",
+      "_tgt": "threlte_core",
+      "source": "threlte_core",
+      "target": "threlte_extras"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "canvas_component",
+      "_tgt": "threlte_core",
+      "source": "threlte_core",
+      "target": "canvas_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "t_component",
+      "_tgt": "threlte_core",
+      "source": "threlte_core",
+      "target": "t_component"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "threlte_rapier",
+      "_tgt": "rapier",
+      "source": "threlte_rapier",
+      "target": "rapier"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "world_component",
+      "_tgt": "threlte_rapier",
+      "source": "threlte_rapier",
+      "target": "world_component"
+    },
+    {
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "t_component",
+      "_tgt": "threejs",
+      "source": "threejs",
+      "target": "t_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "usethrelte_hook",
+      "_tgt": "canvas_component",
+      "source": "canvas_component",
+      "target": "usethrelte_hook"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/content.md",
+      "weight": 1.0,
+      "_src": "gltf_component",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "gltf_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/content.md",
+      "weight": 1.0,
+      "_src": "html_component",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "html_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/interaction.md",
+      "weight": 1.0,
+      "_src": "orbitcontrols_component",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "orbitcontrols_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/interaction.md",
+      "weight": 1.0,
+      "_src": "cameracontrols_component",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "cameracontrols_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/interaction.md",
+      "weight": 1.0,
+      "_src": "transformcontrols_component",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "transformcontrols_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/performance.md",
+      "weight": 1.0,
+      "_src": "instancedmesh_component",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "instancedmesh_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/interaction.md",
+      "weight": 1.0,
+      "_src": "interactivity_plugin",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "interactivity_plugin"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/staging.md",
+      "weight": 1.0,
+      "_src": "layerplugin",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "layerplugin"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/staging.md",
+      "weight": 1.0,
+      "_src": "transitionplugin",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "transitionplugin"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "extend_function",
+      "_tgt": "t_component",
+      "source": "t_component",
+      "target": "extend_function"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "usetask_hook",
+      "_tgt": "usestage_hook",
+      "source": "usetask_hook",
+      "target": "usestage_hook"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "usePhysicsTask_hook",
+      "_tgt": "usetask_hook",
+      "source": "usetask_hook",
+      "target": "usePhysicsTask_hook"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "useloader_hook",
+      "_tgt": "usegltf_hook",
+      "source": "useloader_hook",
+      "target": "usegltf_hook"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "useloader_hook",
+      "_tgt": "usetexture_hook",
+      "source": "useloader_hook",
+      "target": "usetexture_hook"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "injectplugin_function",
+      "_tgt": "interactivity_plugin",
+      "source": "interactivity_plugin",
+      "target": "injectplugin_function"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/content.md",
+      "weight": 1.0,
+      "_src": "gltf_component",
+      "_tgt": "usegltf_hook",
+      "source": "usegltf_hook",
+      "target": "gltf_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "gltf_component",
+      "_tgt": "autocolliders_component",
+      "source": "gltf_component",
+      "target": "autocolliders_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "rigidbody_component",
+      "_tgt": "autocolliders_component",
+      "source": "autocolliders_component",
+      "target": "rigidbody_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "rigidbody_component",
+      "_tgt": "world_component",
+      "source": "world_component",
+      "target": "rigidbody_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "useRapier_hook",
+      "_tgt": "world_component",
+      "source": "world_component",
+      "target": "useRapier_hook"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md",
+      "weight": 1.0,
+      "_src": "rigidbody_component",
+      "_tgt": "collider_component",
+      "source": "rigidbody_component",
+      "target": "collider_component"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/threlte/extras/loading.md",
+      "weight": 1.0,
+      "_src": "suspense_component",
+      "_tgt": "useProgress_hook",
+      "source": "suspense_component",
+      "target": "useProgress_hook"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/performance.md",
+      "weight": 1.0,
+      "_src": "instancedmesh_component",
+      "_tgt": "instance_component",
+      "source": "instancedmesh_component",
+      "target": "instance_component"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.65,
+      "source_file": "docs/threlte/extras/performance.md",
+      "weight": 1.0,
+      "_src": "perfmonitor_component",
+      "_tgt": "instancedmesh_component",
+      "source": "instancedmesh_component",
+      "target": "perfmonitor_component"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/threlte/extras/interaction.md",
+      "weight": 1.0,
+      "_src": "orbitcontrols_component",
+      "_tgt": "cameracontrols_component",
+      "source": "orbitcontrols_component",
+      "target": "cameracontrols_component"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/interaction.md",
+      "weight": 1.0,
+      "_src": "useKeyboard_hook",
+      "_tgt": "useGamepad_hook",
+      "source": "useKeyboard_hook",
+      "target": "useGamepad_hook"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/interaction.md",
+      "weight": 1.0,
+      "_src": "useInputMap_hook",
+      "_tgt": "useKeyboard_hook",
+      "source": "useKeyboard_hook",
+      "target": "useInputMap_hook"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/interaction.md",
+      "weight": 1.0,
+      "_src": "useInputMap_hook",
+      "_tgt": "useGamepad_hook",
+      "source": "useGamepad_hook",
+      "target": "useInputMap_hook"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "injectplugin_function",
+      "_tgt": "layerplugin",
+      "source": "injectplugin_function",
+      "target": "layerplugin"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/core/threlte_core_guide.md",
+      "weight": 1.0,
+      "_src": "injectplugin_function",
+      "_tgt": "transitionplugin",
+      "source": "injectplugin_function",
+      "target": "transitionplugin"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.75,
+      "source_file": "docs/threlte/extras/content.md",
+      "weight": 1.0,
+      "_src": "text_component",
+      "_tgt": "html_component",
+      "source": "html_component",
+      "target": "text_component"
+    },
+    {
+      "relation": "conceptually_related_to",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/audio.md",
+      "weight": 1.0,
+      "_src": "audiolistener_component",
+      "_tgt": "positionalaudio_component",
+      "source": "audiolistener_component",
+      "target": "positionalaudio_component"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.7,
+      "source_file": "docs/threlte/extras/staging.md",
+      "weight": 1.0,
+      "_src": "environment_component",
+      "_tgt": "contactshadows_component",
+      "source": "environment_component",
+      "target": "contactshadows_component"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/threlte/extras/visual_effects.md",
+      "weight": 1.0,
+      "_src": "edges_component",
+      "_tgt": "wireframe_component",
+      "source": "edges_component",
+      "target": "wireframe_component"
+    },
+    {
+      "relation": "semantically_similar_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/threlte/extras/visual_effects.md",
+      "weight": 1.0,
+      "_src": "edges_component",
+      "_tgt": "outlines_component",
+      "source": "edges_component",
+      "target": "outlines_component"
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "github_crud_operations",
+      "label": "GitHub CRUD Operations",
+      "nodes": [
+        "getfile",
+        "updatefile",
+        "createfile",
+        "deletefile"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "client/src/lib/github.ts"
+    },
+    {
+      "id": "file_management_workflow",
+      "label": "File Management Workflow",
+      "nodes": [
+        "api_save",
+        "api_delete",
+        "api_rename",
+        "api_docs"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.9,
+      "source_file": "client/src/routes/api"
+    },
+    {
+      "id": "sidebar_file_tree",
+      "label": "Sidebar File Tree System",
+      "nodes": [
+        "sidebar_state",
+        "treenode",
+        "treeentry",
+        "sidebar_node_component",
+        "sidebar_component"
+      ],
+      "relation": "participate_in",
+      "confidence": "EXTRACTED",
+      "confidence_score": 0.85,
+      "source_file": "client/src/lib/components"
+    },
+    {
+      "id": "physics_layered_architecture",
+      "label": "Physics Layered Architecture",
+      "nodes": [
+        "world_component",
+        "rigidbody_component",
+        "collider_component",
+        "t_component"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/rapier_guide.md"
+    },
+    {
+      "id": "input_abstraction_layer",
+      "label": "Input Abstraction Layer",
+      "nodes": [
+        "useKeyboard_hook",
+        "useGamepad_hook",
+        "useInputMap_hook"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "docs/threlte/extras/interaction.md"
+    },
+    {
+      "id": "visual_edge_effects",
+      "label": "Visual Edge Effects",
+      "nodes": [
+        "edges_component",
+        "wireframe_component",
+        "outlines_component"
+      ],
+      "relation": "form",
+      "confidence": "INFERRED",
+      "confidence_score": 0.8,
+      "source_file": "docs/threlte/extras/visual_effects.md"
+    }
+  ]
+}
