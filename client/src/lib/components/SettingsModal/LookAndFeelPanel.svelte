@@ -5,11 +5,11 @@
 	import ThemeSelector from './ThemeSelector.svelte';
 
 	const themes: { id: ThemeName; label: string; color: string }[] = [
-		{ id: 'tokyo-night', label: 'Tokyo Night', color: '#7aa2f7' },
+		{ id: 'rose-pine', label: 'Rose Pine', color: '#c4a7e7' },
 		{ id: 'catpuccin', label: 'Catpuccin', color: '#c6a0f6' },
 		{ id: 'gruvbox', label: 'Gruvbox', color: '#fb4934' },
 		{ id: 'solarized', label: 'Solarized', color: '#268bd2' },
-		{ id: 'rose-pine', label: 'Rose Pine', color: '#c4a7e7' }
+		{ id: 'tokyo-night', label: 'Tokyo Night', color: '#7aa2f7' }
 	];
 
 	function handleThemeChange(themeId: string) {

@@ -9,12 +9,12 @@ interface ThemeConfig {
 const STORAGE_KEY = 'theme-config';
 
 class ThemeState {
-	name = $state<ThemeName>('tokyo-night');
+	name = $state<ThemeName>('rose-pine');
 	variant = $state<ThemeVariant>('dark');
 
 	private getInitial(): ThemeConfig {
 		if (typeof window === 'undefined') {
-			return { name: 'tokyo-night', variant: 'dark' };
+			return { name: 'rose-pine', variant: 'dark' };
 		}
 		const stored = localStorage.getItem(STORAGE_KEY);
 		if (stored) {
@@ -25,10 +25,10 @@ class ThemeState {
 					return parsed;
 				}
 			} catch {
-				return { name: 'tokyo-night', variant: 'dark' };
+				return { name: 'rose-pine', variant: 'dark' };
 			}
 		}
-		return { name: 'tokyo-night', variant: 'dark' };
+		return { name: 'rose-pine', variant: 'dark' };
 	}
 
 	constructor() {

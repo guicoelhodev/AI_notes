@@ -1,6 +1,8 @@
 # Personal Notes
 
-A personal markdown notes editor with full GitHub integration. Write notes in markdown, store them in a GitHub repository, access them anywhere.
+![Personal Notes Editor](.github/images/readme_welcome.png)
+
+*A personal markdown notes editor with full GitHub integration. Write notes in markdown, store them in a GitHub repository, access them anywhere.*
 
 ## Table of Contents
 
@@ -29,35 +31,22 @@ A personal markdown notes editor with full GitHub integration. Write notes in ma
 
 ## How It Works
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                      Your Browser                          │
-│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────┐ │
-│  │  Sidebar    │  │   Editor    │  │   Theme/Settings    │ │
-│  │  (file tree)│  │  (Milkdown) │  │   (modal panels)   │ │
-│  └──────┬──────┘  └──────┬──────┘  └──────────┬──────────┘ │
-│         │                │                     │            │
-│         ▼                ▼                     ▼            │
-│  ┌─────────────────────────────────────────────────────────┐│
-│  │              SvelteKit Frontend (client/)                ││
-│  │  ┌─────────────┐  ┌─────────────┐  ┌─────────────────┐  ││
-│  │  │ SidebarState│  │ EditorState │  │  ThemeState     │  ││
-│  │  │ SearchState │  │             │  │  SettingsState  │  ││
-│  │  └──────┬──────┘  └──────┬──────┘  └────────┬────────┘  ││
-│  └─────────┼────────────────┼───────────────────┼───────────┘│
-└────────────┼────────────────┼───────────────────┼───────────┘
-             │                │                   │
-             ▼                ▼                   ▼
-┌────────────────────────────────────────────────────────────────┐
-│                    GitHub API (REST)                          │
-│                                                                 │
-│  • Contents API - Read/write files in `docs/`                │
-│  • Images uploaded to `.github/images/`                       │
-│                                                                 │
-└────────────────────────────────────────────────────────────────┘
+```mermaid
+graph LR
+    UI[UI] --> Routes[API Routes] --> GH[GitHub API]
+
+    Routes --- |PUT /api/save| GH
+    Routes --- |PUT /api/rename| GH
+    Routes --- |DELETE /api/delete| GH
+    Routes --- |POST /api/upload| GH
+    Routes --- |DELETE /api/deleteImages| GH
+    Routes --- |GET /api/docs/*| GH
+
+    GH --- C1["/repos/{owner}/{repo}/contents/*"]
+    GH --- C2["/repos/{owner}/{repo}/git/trees/*"]
 ```
 
-## Prerequisites
+## Pre requisites
 
 1. **Node.js 18+** and npm
 2. **GitHub Personal Access Token (PAT)** with `repo` scope
@@ -85,7 +74,7 @@ npm install
 cp .env.example .env
 
 # Edit .env with your credentials (see below)
-nano .env
+vim .env
 
 # Start development server
 npm run dev
