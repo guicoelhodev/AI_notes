@@ -104,6 +104,13 @@ body {
   color: var(--color-text);
 }
 
+@media (max-width: 767px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
 button {
   cursor: pointer;
 }
@@ -370,7 +377,7 @@ button {
 }
 
 .milkdown .ProseMirror {
-  padding: 2rem 1.5rem 2rem 5.5rem !important;
+  padding: 1rem !important;
   min-width: 0;
   max-width: 100%;
   overflow-wrap: anywhere;
@@ -379,19 +386,19 @@ button {
 
 @media (min-width: 768px) {
   .milkdown .ProseMirror {
-    padding: 2rem 3rem;
+    padding: 2rem 3rem !important;
   }
 }
 
 @media (min-width: 1024px) {
   .milkdown .ProseMirror {
-    padding: 2rem 4rem;
+    padding: 2rem 4rem !important;
   }
 }
 
 @media (min-width: 1280px) {
   .milkdown .ProseMirror {
-    padding: 2rem 6rem;
+    padding: 2rem 6rem !important;
   }
 }
 

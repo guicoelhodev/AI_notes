@@ -21,20 +21,23 @@
 <div>
 	<h3 class="mb-4 text-base font-semibold text-(--color-text)">Look and Feel</h3>
 
-	<div class="flex items-center justify-between border-b border-(--color-muted)/20 py-3">
-		<div>
+	<div class="flex items-center justify-between gap-3 border-b border-(--color-muted)/20 py-3">
+		<div class="min-w-0 flex-1">
 			<span class="text-sm font-medium text-(--color-text)">Theme</span>
 			<p class="text-xs text-(--color-muted)">Choose your preferred color palette</p>
 		</div>
-		<ThemeSelector options={themes} value={themeState.name} onchange={handleThemeChange} />
+		<div class="w-32 shrink-0 sm:w-40">
+			<ThemeSelector options={themes} value={themeState.name} onchange={handleThemeChange} />
+		</div>
 	</div>
 
-	<div class="flex items-center justify-between py-3">
-		<div>
+	<div class="flex items-center justify-between gap-3 py-3">
+		<div class="min-w-0 flex-1">
 			<span class="text-sm font-medium text-(--color-text)">Variant</span>
 			<p class="text-xs text-(--color-muted)">Switch between light and dark</p>
 		</div>
-		<ThemeToggle />
+		<div class="shrink-0">
+			<ThemeToggle />
+		</div>
 	</div>
 </div>
-

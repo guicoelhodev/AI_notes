@@ -48,14 +48,14 @@
 		<button
 			type="button"
 			aria-label="Copy context"
-			class="flex items-center gap-2 p-2 rounded-lg bg-(--color-surface) hover:opacity-80 transition-opacity cursor-pointer text-(--color-muted) min-w-[120px]"
+			class="flex items-center gap-2 rounded-lg bg-(--color-surface) p-2 text-(--color-muted) transition-opacity cursor-pointer hover:opacity-80 sm:min-w-[120px]"
 			onclick={handleCopyContext}
 		>
 			<CopyContext class="w-4 h-4" />
 			{#if isCopied}
-				<span class="text-sm text-(--color-heading)">Copied to clipboard!</span>
+				<span class="hidden text-sm text-(--color-heading) sm:inline">Copied to clipboard!</span>
 			{:else}
-				<span class="text-sm">Copy context</span>
+				<span class="hidden text-sm sm:inline">Copy context</span>
 			{/if}
 		</button>
 
